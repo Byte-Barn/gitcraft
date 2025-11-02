@@ -8,7 +8,7 @@ use crate::utils::remote::Fetcher;
 // SPDX license list URL
 use super::{SPDX_LICENSE_LIST_URL, ensure_github_api_license_cache, ensure_spdx_license_cache};
 
-#[derive(clap::Args)]
+#[derive(clap::Args, Clone, Debug)]
 pub struct ListArgs {
     /// Show only popular/common licenses
     #[arg(long, short)]

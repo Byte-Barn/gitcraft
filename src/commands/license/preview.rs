@@ -9,7 +9,7 @@ use crate::utils::cache::{Cache, CacheManager};
 use crate::utils::remote::Fetcher;
 use serde::{Deserialize, Serialize};
 
-#[derive(clap::Args, Debug)]
+#[derive(clap::Args, Debug, Clone)]
 pub struct PreviewArgs {
     /// License ID (e.g. mit, apache-2.0)
     #[arg(value_name = "LICENSE")]

@@ -5,7 +5,7 @@ use crate::utils::remote::Fetcher;
 
 use super::{GITHUB_RAW_BASE, ensure_gitignore_cache, find_template_in_cache};
 
-#[derive(clap::Args)]
+#[derive(clap::Args, Debug, Clone)]
 pub struct PreviewArgs {
     /// Template names to preview (e.g., rust, python, global/windows)
     #[arg()]

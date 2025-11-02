@@ -12,7 +12,7 @@ use super::{
     GITHUB_RAW_BASE, OUTPUT, OUTPUT_BASE_PATH, ensure_gitignore_cache, find_template_in_cache,
 };
 
-#[derive(clap::Args, Debug)]
+#[derive(clap::Args, Clone, Debug)]
 pub struct AddArgs {
     /// Template names to add (e.g., rust, python, global/windows)
     #[arg(value_name = "TEMPLATE")]

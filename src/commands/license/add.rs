@@ -17,7 +17,7 @@ use super::{
 };
 
 // Command to add licenses
-#[derive(clap::Args, Debug)]
+#[derive(clap::Args, Debug, Clone)]
 pub struct AddArgs {
     /// License IDs to add (e.g., mit, apache-2.0)
     #[arg(value_name = "LICENSE")]

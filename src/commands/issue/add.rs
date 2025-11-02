@@ -13,7 +13,7 @@ const OUTPUT: &str = "ISSUE_TEMPLATE";
 
 // Command to add issue templates
 
-#[derive(clap::Args, Debug)]
+#[derive(clap::Args, Clone, Debug)]
 pub struct AddArgs {
     /// Template names to add (e.g., rust, python, global/windows)
     #[arg(value_name = "TEMPLATE")]

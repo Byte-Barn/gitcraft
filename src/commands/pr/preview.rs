@@ -4,7 +4,7 @@ use crate::utils::remote::Fetcher;
 
 use super::GITHUB_RAW_BASE;
 
-#[derive(clap::Args)]
+#[derive(clap::Args, Debug, Clone)]
 pub struct PreviewArgs {
     #[arg(help = "PR template names to preview")]
     pub args: Vec<String>,

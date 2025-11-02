@@ -13,7 +13,7 @@ const OUTPUT: &str = "PULL_REQUEST_TEMPLATE";
 
 // Command to add pull request templates
 
-#[derive(clap::Args, Debug)]
+#[derive(clap::Args, Debug, Clone)]
 pub struct AddArgs {
     /// Template names to add (e.g., rust, python, global/windows)
     #[arg(value_name = "TEMPLATE")]

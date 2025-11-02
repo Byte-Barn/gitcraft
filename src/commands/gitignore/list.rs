@@ -5,7 +5,7 @@ use crate::utils::cache::{Cache, CacheManager};
 
 use super::ensure_gitignore_cache;
 
-#[derive(clap::Args)]
+#[derive(clap::Args, Clone, Debug)]
 pub struct ListArgs {
     /// Show popular templates
     #[arg(short = 'p', long)]

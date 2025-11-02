@@ -6,7 +6,7 @@ use crate::utils::remote::Fetcher;
 
 use super::GITHUB_RAW_BASE;
 
-#[derive(clap::Args)]
+#[derive(clap::Args, Clone, Debug)]
 pub struct ListArgs {
     // You can add options here if needed in the future
 }
