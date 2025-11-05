@@ -57,7 +57,7 @@ Follow these conventions:
 ### Format
 
 ```
-<type>(optional-scope): <short summary>
+[type] (optional-scope): <short summary>
 ```
 
 ### Examples
