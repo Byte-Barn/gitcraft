@@ -1,0 +1,55 @@
+name: Build Binaries
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build ${{ matrix.target.NAME }}
+    runs-on: ${{ matrix.target.OS }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        target:  # same matrix you already use
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target.TARGET }}
+
+      - name: Install cross (linux)
+        if: runner.os == 'Linux'
+        run: cargo install cross --git https://github.com/cross-rs/cross
+
+      - name: Build binary
+        run: |
+          if [[ "${{ runner.os }}" == "Linux" ]]; then
+            cross build --release --target ${{ matrix.target.TARGET }}
+          else
+            cargo build --release --target ${{ matrix.target.TARGET }}
+          fi
+
+      - name: Upload Binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: binary-${{ matrix.target.NAME }}
+          path: target/${{ matrix.target.TARGET }}/release/gitcraft*
+
+      - name: Build wheel (if enabled)
+        if: matrix.target.PYPI_PUBLISH == true
+        run: |
+          pip install maturin
+          maturin build --release --target ${{ matrix.target.TARGET }}
+
+      - name: Upload Wheels
+        if: matrix.target.PYPI_PUBLISH == true
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheels-${{ matrix.target.NAME }}
+          path: target/wheels/*.whl

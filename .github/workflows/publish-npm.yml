@@ -1,0 +1,28 @@
+name: Publish NPM packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download binaries
+        uses: actions/download-artifact@v4
+        with:
+          pattern: binary-*
+          merge-multiple: false
+
+      - name: Build platform packages
+        run: ./scripts/build-platform-npm.sh
+
+      - name: Build unified package
+        run: ./scripts/build-unified-npm.sh
+
+      - name: Publish
+        run: ./scripts/publish-npm.sh
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
