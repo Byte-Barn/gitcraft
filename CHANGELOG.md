@@ -7,7 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
-## [Unreleased]
+### Chore
+
+- update CHANGELOG [skip ci] (c0bb6e7)
+
+
+## [v0.1.112]
 
 
 
@@ -18,6 +23,8 @@ All notable changes to this project will be documented in this file.
 - bump Cargo toml version (3c9ec9c)
 
 - update CHANGELOG [skip ci] (c1dd6d8)
+
+- update documentation for v0.1.111 [skip ci] (f44f599)
 
 
 ## [v0.1.111]
