@@ -1,10 +1,10 @@
 [build-system]
-requires = ["maturin>=1.5,<2.0"]
+requires = ["maturin>=1.5,<2.0", "setuptools-scm"]
 build-backend = "maturin"
 
 [project]
 name = "gitcraft"
-version = "0.1.10"
+dynamic = ["version"]  # ← version is now determined from Git tags
 description = "A template project for GitHub-related utilities."
 authors = [{name = "John Kagunda", email = "john@kagunda.dev"}]
 license = {text = "Apache-2.0"}
@@ -17,9 +17,13 @@ classifiers = [
     "Environment :: Console",
 ]
 requires-python = ">=3.8"
-# No Python dependencies needed
 dependencies = []
 
+[tool.setuptools_scm]
+# Use semantic versioning from annotated or lightweight Git tags
+# Assumes tags are in the format `v1.2.3` or `1.2.3`
+version_scheme = "release-branch-semver"
+local_scheme = "no-local-version"  # avoids +g123abc suffixes in release tags
+
 [tool.maturin]
-# Tell maturin: this is a binary (not a Python extension)
 bindings = "bin"
