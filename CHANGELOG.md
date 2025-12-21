@@ -9,14 +9,10 @@ All notable changes to this project will be documented in this file.
 
 ### Chore
 
-- update CHANGELOG [skip ci] (a91feac)
-
-- update documentation for v0.0.114 [skip ci] (c0a46e0)
-
-- update documentation for v0.0.015 [skip ci] (4534604)
+- update CHANGELOG [skip ci] (5e16b72)
 
 
-## [Unreleased]
+## [v0.0.116]
 
 
 
@@ -25,6 +21,8 @@ All notable changes to this project will be documented in this file.
 - update CHANGELOG [skip ci] (a91feac)
 
 - update documentation for v0.0.114 [skip ci] (c0a46e0)
+
+- update documentation for v0.0.015 [skip ci] (4534604)
 
 
 ## [v0.0.114]
