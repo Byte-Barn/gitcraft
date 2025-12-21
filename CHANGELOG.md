@@ -7,7 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
-## [Unreleased]
+### Chore
+
+- update CHANGELOG [skip ci] (d6088c3)
+
+
+## [v0.0.119]
 
 
 
@@ -18,6 +23,8 @@ All notable changes to this project will be documented in this file.
 - update documentation for v0.0.116 [skip ci] (7954e2c)
 
 - update documentation for v0.0.117 [skip ci] (0c42e66)
+
+- update documentation for v0.0.118 [skip ci] (46ccca4)
 
 
 ## [v0.0.116]
