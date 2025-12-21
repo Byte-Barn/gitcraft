@@ -9,10 +9,10 @@ All notable changes to this project will be documented in this file.
 
 ### Chore
 
-- update documentation for v0.0.127 [skip ci] (5ce44e2)
+- update CHANGELOG [skip ci] (2b35375)
 
 
-## [Unreleased]
+## [v0.0.128]
 
 
 
@@ -23,6 +23,8 @@ All notable changes to this project will be documented in this file.
 - update documentation for v0.0.125 [skip ci] (f61f8f6)
 
 - update documentation for v0.0.126 [skip ci] (48a9dde)
+
+- update documentation for v0.0.127 [skip ci] (5ce44e2)
 
 
 ## [v0.0.125]
