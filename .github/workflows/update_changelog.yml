@@ -1,5 +1,4 @@
-# .github/workflows/release-automation.yml
-name: Release Automation
+name: Update Changelog and Documentation
 
 on:
   workflow_dispatch: # Allows manual triggering of the workflow
@@ -49,9 +48,11 @@ jobs:
       run: |
         if [[ $GITHUB_REF == refs/tags/* ]]; then
           # On tag: Generate full history
+          git-cliff --github-token ${{ secrets.GITHUB_TOKEN }}
           git-cliff --output CHANGELOG.md
         else
           # On push to main: Only unreleased changes
+          git-cliff --github-token ${{ secrets.GITHUB_TOKEN }}
           git-cliff --unreleased --prepend CHANGELOG.md
         fi
 
