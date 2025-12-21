@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- Update documentation for v0.1.0 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+
+### Fixed
+- Fix (ci): made error handling more explicit when gitcraft bin for the platform is not found && bumped Cargo toml version(0.1.1) by @RafaelJohn9
+
+## [Unreleased]
+
+### Changed
 - Update CHANGELOG [skip ci] by @github-actions[bot]
 
 ## [0.1.0] - 2025-12-21
