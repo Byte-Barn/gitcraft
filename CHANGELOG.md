@@ -11,6 +11,17 @@ All notable changes to this project will be documented in this file.
 
 - update CHANGELOG [skip ci] (c0bb6e7)
 
+- update documentation for v0.1.112 [skip ci] (bee21b0)
+
+
+## [Unreleased]
+
+
+
+### Chore
+
+- update CHANGELOG [skip ci] (c0bb6e7)
+
 
 ## [v0.1.112]
 
