@@ -11,6 +11,17 @@ All notable changes to this project will be documented in this file.
 
 - update CHANGELOG [skip ci] (174890c)
 
+- update documentation for v0.0.113 [skip ci] (6267536)
+
+
+## [Unreleased]
+
+
+
+### Chore
+
+- update CHANGELOG [skip ci] (174890c)
+
 
 ## [v0.0.113]
 
