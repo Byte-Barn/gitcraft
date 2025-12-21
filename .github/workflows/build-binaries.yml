@@ -12,20 +12,17 @@ jobs:
       fail-fast: false
       matrix:
         build:
-          # Linux glibc
+          # Linux glibc (64-bit only)
           - { NAME: linux-x64-glibc,    OS: ubuntu-22.04, TARGET: x86_64-unknown-linux-gnu, BUILD_WHEEL: true }
-          - { NAME: linux-x86-glibc,    OS: ubuntu-22.04, TARGET: i686-unknown-linux-gnu,   BUILD_WHEEL: true }
           - { NAME: linux-arm64-glibc,  OS: ubuntu-22.04, TARGET: aarch64-unknown-linux-gnu, BUILD_WHEEL: true }
 
-          # Linux musl (static)
+          # Linux musl (64-bit only) → no wheels
           - { NAME: linux-x64-musl,     OS: ubuntu-22.04, TARGET: x86_64-unknown-linux-musl, BUILD_WHEEL: false }
-          - { NAME: linux-x86-musl,     OS: ubuntu-22.04, TARGET: i686-unknown-linux-musl,   BUILD_WHEEL: false }
           - { NAME: linux-arm64-musl,   OS: ubuntu-22.04, TARGET: aarch64-unknown-linux-musl, BUILD_WHEEL: false }
 
-          # Windows (MSVC)
+          # Windows (64-bit only)
           - { NAME: windows-x64-msvc,   OS: windows-latest, TARGET: x86_64-pc-windows-msvc,   BUILD_WHEEL: true }
-          - { NAME: windows-x86-msvc,   OS: windows-latest, TARGET: i686-pc-windows-msvc,     BUILD_WHEEL: true }
-          # ⚠️ Skip Windows ARM64 for wheels (maturin doesn't support it yet)
+          # Skip Windows ARM64 wheels (maturin limitation)
           - { NAME: windows-arm64-msvc, OS: windows-latest, TARGET: aarch64-pc-windows-msvc, BUILD_WHEEL: false }
 
           # macOS
@@ -40,22 +37,20 @@ jobs:
         with:
           targets: ${{ matrix.build.TARGET }}
 
-      - name: Install cross (Linux only)
-        if: runner.os == 'Linux'
-        run: cargo install cross --git https://github.com/cross-rs/cross
-
-      # === BUILD RUST BINARY ===
-      - name: Build binary
-        shell: bash
+      # === HANDLE WHEEL TARGETS (maturin-controlled build) ===
+      - name: Setup for maturin build (wheel targets)
+        if: matrix.build.BUILD_WHEEL == true
         run: |
-          if [[ "${{ runner.os }}" == "Linux" ]]; then
-            cross build --release --target ${{ matrix.build.TARGET }}
-          else
-            cargo build --release --target ${{ matrix.build.TARGET }}
-          fi
+          # Install maturin and cross (maturin will use cross internally)
+          pip install maturin
+          cargo install cross --locked
 
-      # === PREPARE RAW BINARY ARTIFACT ===
-      - name: Prepare raw binary artifact
+      - name: Build with maturin (for wheel targets)
+        if: matrix.build.BUILD_WHEEL == true
+        run: maturin build --release --target ${{ matrix.build.TARGET }}
+
+      - name: Extract raw binary (from maturin build)
+        if: matrix.build.BUILD_WHEEL == true
         shell: bash
         run: |
           BINARY_NAME="gitcraft"
@@ -69,40 +64,56 @@ jobs:
             echo "BINARY_ARTIFACT=gitcraft-${{ matrix.build.NAME }}" >> $GITHUB_ENV
           fi
 
-      - name: Upload raw binary artifact
+      - name: Upload raw binary (wheel targets)
+        if: matrix.build.BUILD_WHEEL == true
         uses: actions/upload-artifact@v4
         with:
           name: binary-${{ matrix.build.NAME }}
           path: ${{ env.BINARY_ARTIFACT }}
           if-no-files-found: error
 
-      # === BUILD PYTHON WHEEL (if enabled) ===
-      - name: Setup Python for maturin
-        if: matrix.build.BUILD_WHEEL == true
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install maturin
-        if: matrix.build.BUILD_WHEEL == true
-        run: pip install maturin
-
-      - name: Build Python wheel with maturin
-        if: matrix.build.BUILD_WHEEL == true
-        shell: bash
-        run: |
-          # Ensure pyproject.toml exists and has bindings = "bin"
-          maturin build --release --target ${{ matrix.build.TARGET }}
-          # Verify wheel exists
-          if [ ! -d "target/wheels" ] || [ -z "$(ls target/wheels/*.whl 2>/dev/null)" ]; then
-            echo "❌ No wheel found after maturin build!"
-            exit 1
-          fi
-
-      - name: Upload Python wheel artifact
+      - name: Upload Python wheel
         if: matrix.build.BUILD_WHEEL == true
         uses: actions/upload-artifact@v4
         with:
           name: wheels-${{ matrix.build.NAME }}
           path: target/wheels/*.whl
+          if-no-files-found: error
+
+      # === HANDLE NON-WHEEL TARGETS (musl) ===
+      - name: Install cross (for non-wheel Linux targets)
+        if: matrix.build.BUILD_WHEEL == false && runner.os == 'Linux'
+        run: cargo install cross --locked
+
+      - name: Build binary (non-wheel targets)
+        if: matrix.build.BUILD_WHEEL == false
+        shell: bash
+        run: |
+          if [[ "${{ runner.os }}" == "Linux" ]]; then
+            cross build --release --target ${{ matrix.build.TARGET }}
+          else
+            cargo build --release --target ${{ matrix.build.TARGET }}
+          fi
+
+      - name: Prepare raw binary artifact (non-wheel)
+        if: matrix.build.BUILD_WHEEL == false
+        shell: bash
+        run: |
+          BINARY_NAME="gitcraft"
+          if [[ "${{ matrix.build.TARGET }}" == *"windows"* ]]; then
+            BINARY_NAME="${BINARY_NAME}.exe"
+            cp "target/${{ matrix.build.TARGET }}/release/gitcraft.exe" "./gitcraft-${{ matrix.build.NAME }}.exe"
+            echo "BINARY_ARTIFACT=gitcraft-${{ matrix.build.NAME }}.exe" >> $GITHUB_ENV
+          else
+            cp "target/${{ matrix.build.TARGET }}/release/gitcraft" "./gitcraft-${{ matrix.build.NAME }}"
+            chmod +x "./gitcraft-${{ matrix.build.NAME }}"
+            echo "BINARY_ARTIFACT=gitcraft-${{ matrix.build.NAME }}" >> $GITHUB_ENV
+          fi
+
+      - name: Upload raw binary artifact (non-wheel)
+        if: matrix.build.BUILD_WHEEL == false
+        uses: actions/upload-artifact@v4
+        with:
+          name: binary-${{ matrix.build.NAME }}
+          path: ${{ env.BINARY_ARTIFACT }}
           if-no-files-found: error
