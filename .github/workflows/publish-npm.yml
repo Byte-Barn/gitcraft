@@ -123,9 +123,13 @@ jobs:
             const binPath = path.join(path.dirname(pkgPath), 'bin', binName);
             child_process.execFileSync(binPath, process.argv.slice(2), { stdio: 'inherit' });
           } catch (e) {
-            console.error(`Missing platform package: ${pkg}`);
-            console.error(`Run: npm install -g ${pkg}`);
-            process.exit(1);
+            if (e.code === 'MODULE_NOT_FOUND') {
+              console.error(`Missing platform package: ${pkg}`);
+              console.error(`Run: npm install -g ${pkg}`);
+              process.exit(1);
+            } else {
+              throw e;
+            }
           }
           EOF
 
