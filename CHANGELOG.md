@@ -13,6 +13,45 @@ All notable changes to this project will be documented in this file.
 
 - update documentation for v0.1.43 [skip ci] (7b4063a)
 
+- update CHANGELOG [skip ci] (d19305a)
+
+- added Clone and and Debug Derivatives to arg parsers (8c780e0)
+
+- updated version to 0.1.5 (70d996f)
+
+- bumped version to 0.1.10 (8d95552)
+
+
+### Feat
+
+- made add, list, preview submodules public to all resource modules (dd12371)
+
+
+### Refactor
+
+- added routing  files. To enable <command> <resource>  <arg> , type of CLI (e9fa82f)
+
+- Migrated from gh-templates => gitforge (177997e)
+
+- updated tests to match the new gitforge  syntax and pattern (83382a0)
+
+- migrate Python wheel builds to maturin (0c81959)
+
+- rename project from 'gitforge' to 'gitcraft' (001288e)
+
+- broke down build.yml to different yml files. (68c01c3)
+
+
+## [Unreleased]
+
+
+
+### Chore
+
+- update CHANGELOG [skip ci] (40fbae0)
+
+- update documentation for v0.1.43 [skip ci] (7b4063a)
+
 
 ## [Unreleased]
 
