@@ -36,6 +36,11 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.build.TARGET }}
+      
+      # HANDLE MISSING COMPILER FOR ARM64
+      - name: Install ARM64 cross-compiler (for aarch64 Linux)
+        if: runner.os == 'Linux' && contains(matrix.build.TARGET, 'aarch64-unknown-linux-gnu')
+        run: sudo apt-get update && sudo apt-get install -y gcc-aarch64-linux-gnu
 
       # === HANDLE WHEEL TARGETS (maturin-controlled build) ===
       - name: Setup for maturin build (wheel targets)
