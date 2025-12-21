@@ -12,6 +12,10 @@ jobs:
   publish-pypi:
     uses: ./.github/workflows/publish-pypi.yml
     needs: build  # ← Can run after build, even in parallel with cargo
+    with:
+      pypi_token: ${{ secrets.PYPI_API_TOKEN }}
 
   publish-cargo:
     uses: ./.github/workflows/publish-cargo.yml
+    with:
+      cargo_token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
