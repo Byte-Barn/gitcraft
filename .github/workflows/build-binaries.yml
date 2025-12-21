@@ -18,9 +18,9 @@ jobs:
           - { NAME: linux-arm64-glibc,  OS: ubuntu-22.04, TARGET: aarch64-unknown-linux-gnu, BUILD_WHEEL: true }
 
           # Linux musl (static)
-          - { NAME: linux-x64-musl,     OS: ubuntu-22.04, TARGET: x86_64-unknown-linux-musl, BUILD_WHEEL: true }
-          - { NAME: linux-x86-musl,     OS: ubuntu-22.04, TARGET: i686-unknown-linux-musl,   BUILD_WHEEL: true }
-          - { NAME: linux-arm64-musl,   OS: ubuntu-22.04, TARGET: aarch64-unknown-linux-musl, BUILD_WHEEL: true }
+          - { NAME: linux-x64-musl,     OS: ubuntu-22.04, TARGET: x86_64-unknown-linux-musl, BUILD_WHEEL: false }
+          - { NAME: linux-x86-musl,     OS: ubuntu-22.04, TARGET: i686-unknown-linux-musl,   BUILD_WHEEL: false }
+          - { NAME: linux-arm64-musl,   OS: ubuntu-22.04, TARGET: aarch64-unknown-linux-musl, BUILD_WHEEL: false }
 
           # Windows (MSVC)
           - { NAME: windows-x64-msvc,   OS: windows-latest, TARGET: x86_64-pc-windows-msvc,   BUILD_WHEEL: true }
