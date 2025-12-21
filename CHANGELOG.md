@@ -13,6 +13,8 @@ All notable changes to this project will be documented in this file.
 
 - update documentation for v0.0.116 [skip ci] (7954e2c)
 
+- update documentation for v0.0.117 [skip ci] (0c42e66)
+
 
 ## [v0.0.116]
 
