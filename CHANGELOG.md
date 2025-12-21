@@ -5,1809 +5,607 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.0.1] - 2025-12-21
+
+### Added
+- Fix (cd): added an compiler installation for arm64 platforms by @RafaelJohn9
+- Fix (cd): added more permissions for GH token by @RafaelJohn9
+- Fix (cd): added write permissions inside  release tag workflow by @RafaelJohn9
+- Fix (cd): added workflow_call trigger, to enable dependency of workflows && bumped Cargo Toml version by @RafaelJohn9
+- Added routing  files. To enable <command> <resource>  <arg> , type of CLI by @RafaelJohn9
+- Added Clone and and Debug Derivatives to arg parsers by @RafaelJohn9
+- Added tests to verify fetching, previewing and adding of templates with .gitignore is succesful. by @RafaelJohn9
+- Add manual trigger and changes to docs/ on docs deployment and bump version to 0.1.31 by @RafaelJohn9
+- Added starter comments to pr templates by @RafaelJohn9
+- Added more supported platforms in installation md file && added package-lock json by @RafaelJohn9
+- Added separator during preview by @RafaelJohn9
+- Added docusaurus documentation by @RafaelJohn9
+- Added more pr templates by @RafaelJohn9
+- Added 6 more platforms by @RafaelJohn9
+- Added cargo version by @RafaelJohn9
+- Added manual trigger for build by @RafaelJohn9
+- Added output arg pr tests by @RafaelJohn9
+- Added output arg in pr subcommand by @RafaelJohn9
+- Added output arg license tests by @RafaelJohn9
+- Added output arg in license subcommand by @RafaelJohn9
+- Added output argument tests by @RafaelJohn9
+- Added requires templates inside output arg by @RafaelJohn9
+- Added tests to the output param by @RafaelJohn9
+- Add output param by @RafaelJohn9
+- Support using filename and custom name by @RafaelJohn9
+- Added installation scripts by @RafaelJohn9
+- Added CLI tests by @RafaelJohn9
+- Added chore, refactor, technical debt isssue templates by @RafaelJohn9
+- Added checksum (--build-info) by @RafaelJohn9
+- Added --append flag by @RafaelJohn9
+- Added manifest_naviagator in utility mod.rs by @RafaelJohn9
+- Added manifest navigator util file by @RafaelJohn9
+- Added pattern matching util file by @RafaelJohn9
+- Added manifest.yml files to templates dir to correctly map the templates by @RafaelJohn9
+- Added inline docs for `help` cmd by @RafaelJohn9
+- Addded starter comment at manifest.yml by @RafaelJohn9
+- Add chore issue template for reporting tasks that need attention by @dcccalvin
+- Add security issue template for reporting vulnerabilities and data leaks by @dcccalvin
+- Add technical debt issue template for reporting and tracking by @dcccalvin
+- Add refactor issue template for improved code requests by @dcccalvin
+- Added list and preview subcommands in gitignore by @RafaelJohn9
+- Added gitignore by @RafaelJohn9
+- Added gitignore add subcmd by @RafaelJohn9
+- Added cache gen utility by @RafaelJohn9
+- Add "_No Response_" option to subcategory and description fields in DX feedback template by @dcccalvin
+- Added pr_template in the repo workflow by @RafaelJohn9
+- Added pr template integration by @RafaelJohn9
+- Added util function save_file by @RafaelJohn9
+- Add licenses by @RafaelJohn9
+- Add documentation for automated issue cleanup workflow by @Copilot
+- Add workflow to clean optional fields with 'No response' from issues by @Copilot
+- Add GitHub Actions workflow to validate requirements.txt against lock files by @dcccalvin
+- Add GitHub Actions workflow for publishing Python package to TestPyPI by @dcccalvin
+- Add GitHub Actions workflow for publishing Python package to PyPI on release by @dcccalvin
+- Add automated versioning workflow by @Copilot
+- Add GitHub Actions workflow for validating poetry.lock against pyproject.toml by @dcccalvin
+- Add GitHub Actions workflow for caching pip dependencies by @dcccalvin
+- Add GitHub Actions workflow for caching Poetry dependencies by @dcccalvin
+- Add GitHub Actions workflow for running pre-commit hooks on Python files by @dcccalvin
+- Add GitHub Actions workflow for matrix installability check across multiple Python/OS versions by @dcccalvin
+- Add GitHub Actions workflow for pip dependency check by @dcccalvin
+- Add GitHub Actions workflow for checking dependency updates by @dcccalvin
+- Add GitHub Actions workflow for pip-audit security scan by @dcccalvin
+- Add GitHub Actions workflow for Safety security scan by @dcccalvin
+- Add GitHub Actions workflow for Bandit security scan by @dcccalvin
+- Add GitHub Actions workflow for building documentation with MkDocs by @dcccalvin
+- Add GitHub Actions workflow for building documentation with Sphinx by @dcccalvin
+- Add GitHub Actions workflow for sorting and grouping imports with isort by @dcccalvin
+- Add GitHub Actions workflow for auto-formatting code with Black by @dcccalvin
+- Add GitHub Actions workflow for building documentation with MkDocs by @dcccalvin
+- Add GitHub Actions workflow for building Python packages with Poetry by @dcccalvin
+- Add GitHub Actions workflow for uploading coverage reports to Codecov by @dcccalvin
+- Add GitHub Actions workflow for generating code coverage reports by @dcccalvin
+- Add GitHub Actions workflow for Nose2 test suite by @dcccalvin
+- Add GitHub Actions workflow for Unittest testing suite by @dcccalvin
+- Add GitHub Actions workflow for Pytest testing by @dcccalvin
+- Add GitHub Actions workflow for Pyright type checking by @dcccalvin
+- Add GitHub Actions workflow for Mypy static type checking by @dcccalvin
+- Add GitHub Actions workflow for Pylint code quality check by @dcccalvin
+- Add GitHub Actions workflow for Ruff code linter and formatter by @dcccalvin
+- Add GitHub Actions workflow for Black code formatter by @dcccalvin
+- Add Flake8 GitHub Actions workflow for PEP8 compliance by @dcccalvin
+- Added rebase on changelog update workflow  and readme update workflow by @RafaelJohn9
+- Added a sed command on account of a missing line by @RafaelJohn9
+- Added comment to the first line of all our templates that were missing by @RafaelJohn9
+- Added red triangle to easily spot the file by @RafaelJohn9
+- Added test and workflow that verifies all templates start with a comment in the first line by @RafaelJohn9
+- Added branch ref to allow commiting by @RafaelJohn9
+- Added use of git cliff to update CHANGELOG by @RafaelJohn9
+- Added build artifact yml workflow by @RafaelJohn9
+- Added issue cli by @RafaelJohn9
 
 ### Changed
+- Chore (cd): Cargo toml versioning to 0.0.1 for gitcraft. by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
 - Updated README. Updated stale links and refactored `Gitforge` to `Gitcraft` by @RafaelJohn9
 - Update CHANGELOG [skip ci] by @github-actions[bot]
 - Refactor CI workflows and enhance changelog generation by @RafaelJohn9
 - Chore (cd): bumped project version in cargo toml by @RafaelJohn9
 - Update documentation for v0.0.133 [skip ci] by @github-actions[bot]
-
-## [Unreleased]
-
-### Changed
-- Refactor CI workflows and enhance changelog generation by @RafaelJohn9
-- Chore (cd): bumped project version in cargo toml by @RafaelJohn9
-- Update documentation for v0.0.133 [skip ci] by @github-actions[bot]
-
-# Changelog
-
-All notable changes to this project will be documented in this file.
-
-
-## [Unreleased]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (84416d4)
-
-- update documentation for v0.0.132 [skip ci] (985083f)
-
-- update CHANGELOG [skip ci] (1ff4235)
-
-
-### Fix
-
-- updated pyproject toml for dynamic versioning (125a5b6)
-
-
-## [v0.0.132]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (3314021)
-
-- update documentation for v0.0.131 [skip ci] (9160bfa)
-
-
-## [v0.0.131]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (bd20ddd)
-
-- update documentation for v0.0.0.128 [skip ci] (1daa825)
-
-- update documentation for v0.0.129 [skip ci] (bd72707)
-
-- update documentation for v0.0.130 [skip ci] (2be5ddd)
-
-
-## [v0.0.0.128]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (2b35375)
-
-- update documentation for v0.0.128 [skip ci] (5868a17)
-
-
-## [v0.0.128]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (6fd62bb)
-
-- update documentation for v0.0.125 [skip ci] (f61f8f6)
-
-- update documentation for v0.0.126 [skip ci] (48a9dde)
-
-- update documentation for v0.0.127 [skip ci] (5ce44e2)
-
-
-## [v0.0.125]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (950d431)
-
-- update documentation for v0.0.124 [skip ci] (3023eda)
-
-
-## [v0.0.124]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (c88b933)
-
-- update documentation for v0.0.123 [skip ci] (8c8beb3)
-
-
-## [v0.0.123]
-
-
-
-### Chore
-
-- bumped Cargo toml version (7e1d157)
-
-
-## [v0.0.122]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (f1df68c)
-
-- update documentation for v0.0.121 [skip ci] (2a233e3)
-
-
-## [v0.0.121]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (d6088c3)
-
-- update documentation for v0.0.119 [skip ci] (dbf9f96)
-
-- update documentation for v0.0.120 [skip ci] (19f35c3)
-
-
-## [v0.0.119]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (5e16b72)
-
-- update documentation for v0.0.116 [skip ci] (7954e2c)
-
-- update documentation for v0.0.117 [skip ci] (0c42e66)
-
-- update documentation for v0.0.118 [skip ci] (46ccca4)
-
-
-## [v0.0.116]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (a91feac)
-
-- update documentation for v0.0.114 [skip ci] (c0a46e0)
-
-- update documentation for v0.0.015 [skip ci] (4534604)
-
-
-## [v0.0.114]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (174890c)
-
-- update documentation for v0.0.113 [skip ci] (6267536)
-
-
-## [v0.0.113]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (c0bb6e7)
-
-- update documentation for v0.1.112 [skip ci] (bee21b0)
-
-
-## [v0.1.112]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (58b3bd8)
-
-- bump Cargo toml version (3c9ec9c)
-
-- update CHANGELOG [skip ci] (c1dd6d8)
-
-- update documentation for v0.1.111 [skip ci] (f44f599)
-
-
-## [v0.1.111]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (40fbae0)
-
-- update documentation for v0.1.43 [skip ci] (7b4063a)
-
-- update CHANGELOG [skip ci] (d19305a)
-
-- added Clone and and Debug Derivatives to arg parsers (8c780e0)
-
-- updated version to 0.1.5 (70d996f)
-
-- bumped version to 0.1.10 (8d95552)
-
-
-### Feat
-
-- made add, list, preview submodules public to all resource modules (dd12371)
-
-
-### Refactor
-
-- added routing  files. To enable <command> <resource>  <arg> , type of CLI (e9fa82f)
-
-- Migrated from gh-templates => gitforge (177997e)
-
-- updated tests to match the new gitforge  syntax and pattern (83382a0)
-
-- migrate Python wheel builds to maturin (0c81959)
-
-- rename project from 'gitforge' to 'gitcraft' (001288e)
-
-- broke down build.yml to different yml files. (68c01c3)
-
-
-## [v0.1.43]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (deb09bb)
-
-- update documentation for v0.1.42 [skip ci] (3c38d14)
-
-- update CHANGELOG [skip ci] (8b3c562)
-
-
-### Fix
-
-- standardize the format template (adbff58)
-
-
-### Refactor
-
-- made contribution guidelines more clearer in CONTRIBUTING.md (3ff9ce7)
-
-
-## [v0.1.42]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (9283431)
-
-- update documentation for v0.1.41 [skip ci] (e1e3f6e)
-
-
-### Feat
-
-- (version) bumped version to 0.1.42 (3a07769)
-
-
-## [v0.1.41]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (2f590a2)
-
-- update documentation for v0.1.40 [skip ci] (2b9e4e0)
-
-
-### Finx
-
-- npm configuration for build workflow (2fa77aa)
-
-
-## [v0.1.40]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (caf9c53)
-
-- update documentation for v0.1.39 [skip ci] (608f2ad)
-
-- update CHANGELOG [skip ci] (4faee01)
-
-- update documentation for v0.1.40 [skip ci] (e2892c7)
-
-- remove emoji from exception raised in npm (483bbba)
-
-- update CHANGELOG [skip ci] (6c4f365)
-
-- update documentation for v0.1.40 [skip ci] (2c1e855)
-
-
-### Feat
-
-- (version) Updated Cargo.toml to version 0.1.40 (33a5384)
-
-
-### Fix
-
-- gitignore template names with the '.gitignore' to be parsed correctly.\n\nInitially we used to allow only the template name without the the ext though some users may pass the '.gitignore' ext. It shouldn't fail but be parsed correctly\n (26d5b34)
-
-
-### Refactor
-
-- used a more idiomatic rust pattern. related with normalization of the gitignore template name with ext (6031f50)
-
-
-### Test
-
-- added tests to verify fetching, previewing and adding of templates with .gitignore is succesful. (05a4439)
-
-
-## [v0.1.39]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (4ef13a7)
-
-- update documentation for v0.1.38 [skip ci] (16f7649)
-
-- bump version to 0.1.39 (a30421d)
-
-
-## [v0.1.38]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (b50b7f4)
-
-- update documentation for v0.1.37 [skip ci] (2911756)
-
-- update CHANGELOG [skip ci] (9d208df)
-
-
-### Feat
-
-- replaced use of emojis with react svg icons && bump package version in toml to 0.1.38 (7cfe98d)
-
-
-## [v0.1.37]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (988f20c)
-
-- update documentation for v0.1.36 [skip ci] (8c8bd0a)
-
-
-### Fix
-
-- problem with uploading new bin && bump version to 0.1.37 (3c5d76c)
-
-
-## [v0.1.36]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (e32fef1)
-
-- update documentation for v0.1.35 [skip ci] (5fde181)
-
-
-### Fix
-
-- broken links && bump tool version in cargotoml 0.1.36 (aab9021)
-
-
-## [v0.1.35]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (83b2dda)
-
-- update documentation for v0.1.34 [skip ci] (9a1171d)
-
-
-## [v0.1.34]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (ee99247)
-
-- update documentation for v0.1.33 [skip ci] (9f24047)
-
-- Cargo toml app version to 0.1.34 (71e9587)
-
-
-## [v0.1.33]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (51bfd59)
-
-- update documentation for v0.1.32 [skip ci] (4de0f81)
-
-- update Cargo.lock (3cc5780)
-
-
-### Docs
-
-- removed toggling between light and dark theme && bump version of Cargo toml (4d7a8d4)
-
-
-## [v0.1.32]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (72f6356)
-
-- update documentation for v0.1.31 [skip ci] (6e4d6da)
-
-- updated docs readme && bump cargo toml version (ecf9f64)
-
-
-## [v0.1.31]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (8c9ebaf)
-
-- update documentation for v0.1.30 [skip ci] (0e4147c)
-
-
-### Fix
-
-- add manual trigger and changes to docs/ on docs deployment and bump version to 0.1.31 (ea5da1f)
-
-
-## [v0.1.30]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (3005962)
-
-- update documentation for v0.1.29 [skip ci] (95995f6)
-
-- bump version in Cargo.toml (b95f9e7)
-
-
-## [v0.1.29]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (10e96b6)
-
-- update documentation for v0.1.28 [skip ci] (2f153c1)
-
-
-### Fix
-
-- deploy docs (removed deprecated version) && bumped version in toml (f86d604)
-
-
-## [v0.1.28]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (0208876)
-
-- update documentation for v0.1.27 [skip ci] (0e8eba4)
-
-- added starter comments to pr templates (a90b5bf)
-
-
-### Docs
-
-- added docusaurus documentation (010ed25)
-
-- added more supported platforms in installation md file && added package-lock json (fa23713)
-
-
-### Feat
-
-- added more pr templates (bb00fb8)
-
-- added separator during preview (64f36d7)
-
-- issue:add allow passing of template with ext (0f46367)
-
-- issue:list:  pass file without ext (0063564)
-
-- updated pr manifest.yml (154cfa4)
-
-- license:add:all:: when downloading all licenses save with remote file name (fee6175)
-
-- deploy docs workflow (5cea7d3)
-
-
-### Fix
-
-- removed misplaced LICENSE (9749bbe)
-
-
-## [v0.1.27]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (6f8b40f)
-
-- update documentation for v0.1.26 [skip ci] (34b7526)
-
-
-### Fix
-
-- removed MinGW build (a386535)
-
-
-## [v0.1.26]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (8bd9fcf)
-
-- update documentation for v0.1.25 [skip ci] (bebd445)
-
-
-### Feat
-
-- added 6 more platforms (bdc6a22)
-
-
-## [v0.1.25]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (5d9333b)
-
-- update documentation for v0.1.24 [skip ci] (8ff7414)
-
-- bump cargo toml version (0d229f5)
-
-
-## [v0.1.24]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (8811d4f)
-
-- update documentation for v0.1.23 [skip ci] (1390df3)
-
-
-### Fix
-
-- homebrew cloning (93c827d)
-
-
-## [v0.1.23]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (dc92a6a)
-
-- update documentation for v0.1.22 [skip ci] (94f810a)
-
-
-### Fix
-
-- pypi npm homebrew package deployment (40421c4)
-
-
-## [v0.1.22]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (6da4262)
-
-- update documentation for v0.1.21 [skip ci] (bb98229)
-
-
-### Fix
-
-- pypi and npm publish (31bbdd5)
-
-
-## [v0.1.21]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (85966c5)
-
-- update documentation for v0.1.20 [skip ci] (68ce744)
-
-
-### Fix
-
-- publish to have a unified namespace and fixed npm wrapper (0113323)
-
-
-## [v0.1.20]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (8004893)
-
-- update documentation for v0.1.19 [skip ci] (6e60afb)
-
-
-### Fix
-
-- publish homebrew automated versioning and npm to handle global install correctly (6d497a7)
-
-
-## [v0.1.19]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (4ae0c08)
-
-- update documentation for v0.1.18 [skip ci] (1bb656a)
-
-
-### Fix
-
-- publish with ref to git cliff (0a642cc)
-
-
-## [v0.1.18]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (f31ee48)
-
-- update documentation for v0.1.17 [skip ci] (bfd94cc)
-
-
-### Fix
-
-- publish workflow (61ab339)
-
-
-## [v0.1.17]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (b352965)
-
-- update documentation for v0.1.16 [skip ci] (aeb40d7)
-
-- bump version 0.1.17 (02b9aa9)
-
-
-## [v0.1.16]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (5275894)
-
-- update documentation for v0.1.15 [skip ci] (32d0ec6)
-
-- bump version to 0.1.16 (be6b4d5)
-
-
-## [v0.1.15]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (5c8b2c2)
-
-- update documentation for v0.1.14 [skip ci] (16106a2)
-
-
-### Fix
-
-- shell errors in workflow (e207413)
-
-
-## [v0.1.14]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (2b9729d)
-
-- update documentation for v0.1.13 [skip ci] (4f8b638)
-
-
-### Feat
-
-- updated license name with the correct spdx id (e54a7e5)
-
-
-## [v0.1.13]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (5cb58c3)
-
-- update documentation for v0.1.12 [skip ci] (ad1f640)
-
-- update cargo.toml  with meta description (29defb4)
-
-
-### Feat
-
-- added manual trigger for build (ea49c2c)
-
-- added cargo version (da3b0bb)
-
-
-## [v0.1.12]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (240d83b)
-
-- update documentation for v0.1.11 [skip ci] (1b5025d)
-
-- update CHANGELOG [skip ci] (ac2cdba)
-
-- update CHANGELOG [skip ci] (0949f5e)
-
-
-### Feat
-
-- updated build yml to support publishing to different platforms (749598f)
-
-
-## [v0.1.11]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (10ff7f1)
-
-- update documentation for v0.1.10 [skip ci] (f48203c)
-
-
-### Docs
-
-- updated license test doc (2868a36)
-
-
-### Feat
-
-- support using filename and custom name (b1710dc)
-
-- add output param (e79b7d4)
-
-- added output arg in license subcommand (044319e)
-
-- added output arg in pr subcommand (df22fe7)
-
-
-### Fix
-
-- added requires templates inside output arg (81dc582)
-
-- centralized saved file logging inside file::save_file (0031a56)
-
-
-### Test
-
-- test_gitignore_add_valid_and_invalid_template (639fcc2)
-
-- added tests to the output param (af9e48f)
-
-- added output argument tests (a405394)
-
-- added output arg license tests (a243e96)
-
-- added output arg pr tests (6464a74)
-
-
-## [v0.1.10]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (e80224f)
-
-- update documentation for v0.1.9 [skip ci] (54cb113)
-
-
-## [v0.1.9]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (dd9b592)
-
-- update documentation for v0.1.8 [skip ci] (2cdb8dd)
-
-
-### Fix
-
-- delete LICENSE.Apache-2.0 (4b69eaf)
-
-
-## [v0.1.8]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (c48d4ff)
-
-- update documentation for v0.1.7 [skip ci] (4c6f08f)
-
-
-### Rename
-
-- LICENSE.Apache-2.0 => LICENSE (8def485)
-
-
-## [v0.1.7]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (0e5b27a)
-
-- update documentation for v0.1.6 [skip ci] (b9c1bc6)
-
-
-### Refactor
-
-- Apache license instead (cd293e4)
-
-
-## [v0.1.6]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (3a9165b)
-
-
-## [v0.1.5]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (432707e)
-
-- update documentation for v0.1.2 [skip ci] (954f0d2)
-
-
-## [v0.1.1]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (7257aa7)
-
-- update documentation for v0.0.58 [skip ci] (2417dec)
-
-
-## [v0.0.58]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (bcca655)
-
-
-## [v0.0.57]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (5afc51d)
-
-
-## [v0.1.0]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (ed83d80)
-
-
-## [v0.0.55]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (04089ca)
-
-
-## [v0.0.54]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (74cbd49)
-
-
-## [v0.0.53]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (d75fe63)
-
-- update README with the refactored  CLI design (a3b7bee)
-
-- addded starter comment at manifest.yml (3436bd3)
-
-- Update dependencies (a7050e2)
-
-- prettify display output dir (189c74d)
-
-- update dependency (fdedbac)
-
-- update dependency (cabe808)
-
-- updated readme with new commands (c31d307)
-
-- replaced pull request template with the new one (e1abdfa)
-
-- updated README with installation using installation scripts. (3203082)
-
-
-### Docs
-
-- added inline docs for `help` cmd (23377d0)
-
-
-### Feat
-
-- added cache gen utility (1c6b2b0)
-
-- added gitignore add subcmd (eaf1d37)
-
-- added gitignore (eda53fe)
-
-- Cargo.lock (33f8c90)
-
-- added list and preview subcommands in gitignore (aa7431f)
-
-- add refactor issue template for improved code requests (76c01d0)
-
-- add technical debt issue template for reporting and tracking (9cf2322)
-
-- add security issue template for reporting vulnerabilities and data leaks (a69f6c9)
-
-- add chore issue template for reporting tasks that need attention (7443507)
-
-- remove security issue template from issue templates (59e39c5)
-
-- added manifest.yml files to templates dir to correctly map the templates (a9764b4)
-
-- license:list added --non-software (75ce2ce)
-
-- added pattern matching util file (5197ac8)
-
-- added manifest_naviagator in utility mod.rs (1a046d0)
-
-- created append_file function (8157968)
-
-- added --append flag (673bea9)
-
-- automatic versioning of the tool (bb365f0)
-
-- added checksum (--build-info) (bd39dc6)
-
-- added chore, refactor, technical debt isssue templates (e6c7153)
-
-- added installation scripts (5f72244)
-
-
-### Feature
-
-- added manifest navigator util file (5f49ee9)
-
-
-### Fix
-
-- correct type for 'steps' field in testing issue template (6111dc5)
-
-- correct type for 'steps' field in testing issue template (9461ffe)
-
-- enhance bug report template descriptions to include "_No Response_" option (a57e1f4)
-
-- update community issue template to include "_No Response_" option in descriptions (f8edafa)
-
-- update documentation issue template to clarify "_No Response_" option in descriptions (d95fb79)
-
-- add "_No Response_" option to subcategory and description fields in DX feedback template (7501d50)
-
-- update feature request template to clarify "_No Response_" option in subcategory and description fields (10f27fc)
-
-- update support template to clarify "_No Response_" option in subcategory and question fields (e72155a)
-
-- update testing & QA template to clarify "_No Response_" option in subcategory and description fields (ec41568)
-
-- Pull request template: removed the non performative part of the syntax (c139f68)
-
-- fully update CHANGELOG instead of prepending (3713193)
-
-- auto version workflow - to correctly take the correct tag (c2c6a4f)
-
-- remove color encodings inside string to use 'colored' lib (b276bd8)
-
-- show all categories by default (6783745)
-
-- license:mod.rs : a logical error on updating cache (fc9da40)
-
-- pr:add:  correctly handled dir output on default template (88ddf51)
-
-- updated default pr templates to be more generic (fc5e5a0)
-
-
-### Refactor
-
-- deprecated description field in bug issue template (5510bea)
-
-- maintainable cli design (62cb312)
-
-- removed the  custom parser (ebb0627)
-
-- removed commonAddArgs in base (c86eada)
-
-- gitignore::list removed complexities (serialization/deserialization) (82a160d)
-
-- standardized python ci template structure to be replicable with other languages and frameworks (2201cfa)
-
-- license add subcommand (66fce40)
-
-- license list rs (f348f57)
-
-- list.rs  and cache logic (0d6e34d)
-
-- deprecated versioning in cache and increased verbosity in error handling of load_cache (b31e713)
-
-- removed to be supported soon in utils/file.rs (667c439)
-
-- improved licenses: used an alternative to Github API #107 (c420c7a)
-
-- removed version in cache (b99c0e5)
-
-- updated ensure gitignore cache to support update cache parameter (abc6959)
-
-- manifest yml (c18924d)
-
-- deprecated use of api to use manifest yml files (f919ae4)
-
-- use manifest.yml instead of using github api (22af63f)
-
-- download_all_templates fn to use manifest instead of Github api (bb10a8b)
-
-- combined update changelog and readme version to release automation (566303d)
-
-
-### Tests
-
-- added CLI tests (b394f92)
-
-
-## [v0.0.52]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (4eaed24)
-
-
-### Fix
-
-- pull_request_template removed first line comment (68d570f)
-
-- PR template (4eea059)
-
-
-### Refactor
-
-- removed templates inside the repo (d646c49)
-
-- removed emojis in PR template (de759eb)
-
-
-## [v0.0.51]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (0ecad29)
-
-
-### Feat
-
-- added pr_template in the repo workflow (96d8399)
-
-
-## [v0.0.50]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (1a35a2a)
-
-- update CHANGELOG [skip ci] (e858214)
-
-
-### Feat
-
-- added pr template integration (b4c60d0)
-
-
-### Refactor
-
-- Adopt Clap Subcommand Pattern for Clean and Extensible CLI Design (3d7df1b)
-
-
-## [v0.0.49]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (34e66fd)
-
-
-### Feature
-
-- specification of dir to write output (a560a18)
-
-
-### Refactor
-
-- main functions in cmds  will be plugin managers (ed406a6)
-
-- added util function save_file (20c5ed5)
-
-
-## [v0.0.48]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (26b911d)
-
-- rename update_changelog.yml to update-changelog.yml for consistency (d6dda59)
-
-
-### Feat
-
-- add licenses (089d63b)
-
-- #30 allow multiple downloads (e3b0e51)
-
-
-### Fix
-
-- surpress dead code warning in remote.rs (dc062fd)
-
-
-### License
-
-- issue.rs to a dir (16655c5)
-
-
-### Refactor
-
-- issue.rs to a dir (e0feebf)
-
-- rm issue.rs and license.rs (a4cf38e)
-
-
-## [v0.0.47]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (1935023)
-
-
-### Fix
-
-- update  remote.rs to be standard (df9248c)
-
-
-## [v0.0.46]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (939628f)
-
-
-### Feat
-
-- add GitHub Actions workflow for publishing Python package to PyPI on release (9cf70d6)
-
-- add GitHub Actions workflow for publishing Python package to TestPyPI (770d0f6)
-
-- add GitHub Actions workflow to validate requirements.txt against lock files (4b9ab41)
-
-
-## [v0.0.45]
-
-
-
-### Restructure
-
-- Organize CI templates into group-specific subfolders (2aadf62)
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (7ef4982)
-
-- update CHANGELOG [skip ci] (fd876fa)
-
-
-### Feat
-
-- add Flake8 GitHub Actions workflow for PEP8 compliance (b9a503d)
-
-- add GitHub Actions workflow for Black code formatter (beb7f08)
-
-- add GitHub Actions workflow for Ruff code linter and formatter (6ec904b)
-
-- add GitHub Actions workflow for Pylint code quality check (c72c721)
-
-- add GitHub Actions workflow for Mypy static type checking (022f0f8)
-
-- add GitHub Actions workflow for Pyright type checking (52be534)
-
-- add GitHub Actions workflow for Pytest testing (8f532ca)
-
-- add GitHub Actions workflow for Unittest testing suite (fde7f81)
-
-- add GitHub Actions workflow for Nose2 test suite (afa17a0)
-
-- add GitHub Actions workflow for generating code coverage reports (528a5f1)
-
-- add GitHub Actions workflow for uploading coverage reports to Codecov (8eded48)
-
-- add GitHub Actions workflow for building Python packages with Poetry (f05362d)
-
-- add GitHub Actions workflow for building documentation with MkDocs (bf133db)
-
-- add GitHub Actions workflow for auto-formatting code with Black (6d04102)
-
-- add GitHub Actions workflow for sorting and grouping imports with isort (1d4a216)
-
-- add GitHub Actions workflow for building documentation with Sphinx (fabf852)
-
-- add GitHub Actions workflow for building documentation with MkDocs (b21a6a0)
-
-- add GitHub Actions workflow for Bandit security scan (150f405)
-
-- add GitHub Actions workflow for Safety security scan (a2aef6b)
-
-- add GitHub Actions workflow for pip-audit security scan (e3a8743)
-
-- add GitHub Actions workflow for checking dependency updates (4d039e2)
-
-- add GitHub Actions workflow for pip dependency check (8f32c28)
-
-- add GitHub Actions workflow for matrix installability check across multiple Python/OS versions (619dbcf)
-
-- add GitHub Actions workflow for running pre-commit hooks on Python files (e92382e)
-
-- add GitHub Actions workflow for caching Poetry dependencies (c68d07d)
-
-- add GitHub Actions workflow for caching pip dependencies (d894c1f)
-
-- add GitHub Actions workflow for validating poetry.lock against pyproject.toml (87be0fd)
-
-
-### Fix
-
-- correct comment formatting in coverage.yml (5e85372)
-
-- update Python version matrix to allow for flexible version specification (d3df8e3)
-
-- update Ruff command to explicitly check code quality (829c847)
-
-- update GitHub Actions workflow to build Python package using setuptools (d9f83d5)
-
-
-## [v0.0.44]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (ab2c33b)
-
-- update CHANGELOG [skip ci] (c2a3c27)
-
-
-### Fix
-
-- installation instructions: made it clearer (e29fd27)
-
-
-## [v0.0.43]
-
-
-
-### Fix
-
-- syntax error in change log update workflow (8bf28b7)
-
-
-## [v0.0.42]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (5c4f775)
-
-
-### Fix
-
-- added rebase on changelog update workflow  and readme update workflow (34e6205)
-
-
-## [v0.0.41]
-
-
-
-### Fix
-
-- run: 16012346792 (fc00066)
-
-
-## [v0.0.40]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (3fda110)
-
-
-## [v0.0.39]
-
-
-
-### Feat
-
-- updated README:: piece of info to new contributors (0e2b1ae)
-
-
-### Fix
-
-- update README to read the latest version (add3290)
-
-- enforced semantic versioning in build yml, updated changelog yml logic (87c1b23)
-
-- run: 16012293293 (71d000c)
-
-
-## [v0.0.38]
-
-
-
-### Fix
-
-- updated sed command (ed6bf68)
-
-
-## [v0.0.37]
-
-
-
-### Fix
-
-- sed command to correctly update markdown text part (350a7f8)
-
-
-## [v0.0.36]
-
-
-
-### Fix
-
-- handle the sed cmd correctly to correctly update the versions (0891bb1)
-
-
-## [v0.0.34]
-
-
-
-### Fix
-
-- replace the version in both markdown and plain-text (ff6b9d1)
-
-
-## [v0.0.33]
-
-
-
-### Fix
-
-- removed redundant v while giving versions (24c3aae)
-
-
-## [v0.0.32]
-
-
-
-### Fix
-
-- update sed commands (62dee53)
-
-
-## [v0.0.31]
-
-
-
-### Fix
-
-- Escape the forward slashes and parentheses properly in the sed pattern (3df872e)
-
-
-## [v0.0.3]
-
-
-
-### Fix
-
-- both link part and displayed message part will be displayed (3c382e8)
-
-
-## [v0.0.29]
-
-
-
-### Fix
-
-- added a sed command on account of a missing line (a36662c)
-
-
-## [v0.0.28]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (991edf0)
-
-
-### Feat
-
-- enable dynamic update of version in  README (869aa23)
-
-
-### Fic
-
-- typo in git cliff toml  and workflow (ed73387)
-
-
-### Fix
-
-- changelog workflow  and updated git-cliff toml (1e399ca)
-
-- unexpected command in git-cliff (472e8ec)
-
-- git-cliff command: appended Changelog (6a4cc7e)
-
-- renamed git-cliff to cliff storing changes to temp changelog (e668151)
-
-- git ref branch name (f590ee6)
-
-- trigger to happen only  on push (46e6c2e)
-
-- typo in README (3979eb1)
-
-
-## [v0.0.27]
-
-
-
-### Feat
-
-- update remote:list to fetch with comments (19e1b9c)
-
-
-## [v0.0.26]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (ccd9627)
-
-- update CHANGELOG [skip ci] (d0eb53c)
-
-- update CHANGELOG [skip ci] (f1a6551)
-
-- update CHANGELOG [skip ci] (79eedb4)
-
-- update CHANGELOG [skip ci] (30d5991)
-
-- update CHANGELOG [skip ci] (d02c35d)
-
-- update CHANGELOG [skip ci] (dcf5059)
-
-- update CHANGELOG [skip ci] (56b6a0c)
-
-
-### Feat
-
-- enhanced template files by adding appropriate tags to them (f71dedf)
-
-- added test and workflow that verifies all templates start with a comment in the first line (b99ae07)
-
-- updated the tests to capture all files\n\nUpdated the tests to capture all files instead of failing the first time it finds an invalid template\n (3e3b2ff)
-
-
-### Fix
-
-- untamper with MPL 2.0  License (391076a)
-
-- space typo (08b2d4b)
-
-- removed sha256 checksums from README (fc50455)
-
-- updated labels to prevent only one being chosen (1bd173f)
-
-- updated README to enable using repo labels (8d50a8b)
-
-- added red triangle to easily spot the file (c905276)
-
-- added comment to the first line of all our templates that were missing (c2ea0cf)
-
-
-### Refactor
-
-- renamed naming of licenses (9886d80)
-
-- renamed issue templates and added first line as comment (52b85b0)
-
-- renamed pr templates (c5022f6)
-
-- updated the exising issue templates (978d353)
-
-
-## [v0.0.22]
-
-
-
-### Update
-
-- version in README (86174d4)
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (6c4f705)
-
-
-### Fix
-
-- refactor from git-templates to gh templates (398af77)
-
-
-## [v0.0.21]
-
-
-
-### Chore
-
-- update CHANGELOG [skip ci] (fd1f611)
-
-
-## [v0.0.18]
-
-
-
-### Fix
-
-- typo in License (7c0581d)
-
-
-### Update
-
-- Added License (893a227)
-
-- Added Contribution guidelines and Code of Conduct (33561cc)
-
-- Added my email in CodeOfConduct (c930dc0)
-
-- inserted email inside Code Of Conduct (cafdff4)
-
-
-### Fix
-
-- refactor from git templates to gh templates (921fc5c)
-
-
-## [v0.0.24]
-
-
-
-### Update
-
-- README, showing distribution for git-templates bin (39a409b)
-
-- README to fix typo and maintain consistency in Doc (8c1a2e9)
-
-
-### Feat
-
-- introduced update change log in its own workflow with its own trigger (c6a6824)
-
-
-## [v0.0.17]
-
-
-
-### Fix
-
-- avoid pushing  on tag ref (821152e)
-
-
-## [v0.0.16]
-
-
-
-### Fix
-
-- added branch ref to allow commiting (5fe9cf1)
-
-
-## [v0.0.15]
-
-
-
-### Feat
-
-- added use of git cliff to update CHANGELOG (8a48f39)
-
-
-## [v0.0.14]
-
-
-
-### Fix
-
-- Build errors due to wrong ext appending (windows build) (0f9794a)
-
-
-## [v0.0.13]
-
-
-
-### Fix
-
-- Upload assets due to permission errors (8bc6431)
-
-
-## [v0.0.12]
-
-
-
-### Fix
-
-- SSL issues during build (c315928)
-
-
-## [v0.0.11]
-
-
-
-### Feature
-
-- Added Issue template yml (7975e6a)
-
-- Copied the Issue templates to .github (3a6b915)
-
-- Add config yml file (e3e13d0)
-
-- Added PR templates and CodeOfConduct template (b4d0542)
-
-- Added Licenses (4b1e114)
-
-- added issue cli (d822523)
-
-- added build artifact yml workflow (9dffcab)
-
-
-### Fix
-
-- removed ':' inside bug report yml\n\ntrailing ':' was found under body => dropdown => options at Other validations\n (608ef3a)
-
-- Moved required: true to validations (401b1b1)
-
-- Remove typos (1529b51)
-
-- Updated the remote functions to have better error handling when there is network error (c278694)
-
-
-### Update
-
-- Added README (f38eeef)
-
-- Renamed the issue templates, Added Docs to README, Added issue template script installer (4e3cd70)
-
-- from Github to Git templates && added default ext in  pretty print (5ed8a83)
-
-Generated by git-cliff
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.132 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.131 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.130 [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.129 [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.0.128 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.128 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Chore (ci): homebrew publish workflow by @RafaelJohn9
+- Update documentation for v0.0.127 [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.126 [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.125 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.124 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.123 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Bumped Cargo toml version by @RafaelJohn9
+- Update documentation for v0.0.121 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.120 [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.119 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.118 [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.117 [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.116 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.015 [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.114 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.0.113 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.112 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.111 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Bump Cargo toml version by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #158 from Byte-Barn/refactor/to-gitforge by @RafaelJohn9 in [#158](https://github.com/Byte-Barn/gitcraft/pull/158)
+- Broke down build.yml to different yml files. by @RafaelJohn9
+- Rename project from 'gitforge' to 'gitcraft' by @RafaelJohn9
+- Bumped version to 0.1.10 by @RafaelJohn9
+- Migrate Python wheel builds to maturin by @RafaelJohn9
+- Updated version to 0.1.5 by @RafaelJohn9
+- Updated tests to match the new gitforge  syntax and pattern by @RafaelJohn9
+- Migrated from gh-templates => gitforge by @RafaelJohn9
+- Made add, list, preview submodules public to all resource modules by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.43 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #155 from FaizaSuraw/docs-improvement by @RafaelJohn9 in [#155](https://github.com/Byte-Barn/gitcraft/pull/155)
+- Made contribution guidelines more clearer in CONTRIBUTING.md by @FaizaSuraw
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Rename repository to GitForge and update README by @RafaelJohn9
+- Update documentation for v0.1.42 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- (version) bumped version to 0.1.42 by @RafaelJohn9
+- Update documentation for v0.1.41 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Npm configuration for build workflow by @RafaelJohn9
+- Update documentation for v0.1.40 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- (version) Updated Cargo.toml to version 0.1.40 by @RafaelJohn9
+- Update documentation for v0.1.40 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.40 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #154 from RafaelJohn9/develop by @RafaelJohn9 in [#154](https://github.com/Byte-Barn/gitcraft/pull/154)
+- Used a more idiomatic rust pattern. related with normalization of the gitignore template name with ext by @RafaelJohn9
+- Update documentation for v0.1.39 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Bump version to 0.1.39 by @RafaelJohn9
+- Update documentation for v0.1.38 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Replaced use of emojis with react svg icons && bump package version in toml to 0.1.38 by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README.md by @RafaelJohn9
+- Update documentation for v0.1.37 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.36 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.35 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Changed  baseUrl to / from /gh-templates by @RafaelJohn9
+- Update documentation for v0.1.34 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Cargo toml app version to 0.1.34 by @RafaelJohn9
+- Update documentation for v0.1.33 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update Cargo.lock by @RafaelJohn9
+- Update documentation for v0.1.32 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Updated docs readme && bump cargo toml version by @RafaelJohn9
+- Update documentation for v0.1.31 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.30 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Bump version in Cargo.toml by @RafaelJohn9
+- Update documentation for v0.1.29 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.28 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #144 from RafaelJohn9/develop by @RafaelJohn9 in [#144](https://github.com/Byte-Barn/gitcraft/pull/144)
+- Merge pull request #136 from RafaelJohn9/feat/docs by @RafaelJohn9 in [#136](https://github.com/Byte-Barn/gitcraft/pull/136)
+- Deploy docs workflow by @RafaelJohn9
+- License:add:all:: when downloading all licenses save with remote file name by @RafaelJohn9
+- Updated pr manifest.yml by @RafaelJohn9
+- Issue:list:  pass file without ext by @RafaelJohn9
+- Issue:add allow passing of template with ext by @RafaelJohn9
+- Update documentation for v0.1.27 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.26 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.25 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Bump cargo toml version by @RafaelJohn9
+- Update documentation for v0.1.24 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.23 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.22 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.21 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.20 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.19 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.18 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.17 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Bump version 0.1.17 by @RafaelJohn9
+- Update documentation for v0.1.16 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Bump version to 0.1.16 by @RafaelJohn9
+- Update documentation for v0.1.15 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.14 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Updated license name with the correct spdx id by @RafaelJohn9
+- Update documentation for v0.1.13 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #142 from RafaelJohn9/develop by @RafaelJohn9 in [#142](https://github.com/Byte-Barn/gitcraft/pull/142)
+- Merge pull request #141 from RafaelJohn9/update/cargo.toml by @RafaelJohn9 in [#141](https://github.com/Byte-Barn/gitcraft/pull/141)
+- Update cargo.toml  with meta description by @RafaelJohn9
+- Update documentation for v0.1.12 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #140 from RafaelJohn9/develop by @RafaelJohn9 in [#140](https://github.com/Byte-Barn/gitcraft/pull/140)
+- Merge pull request #139 from RafaelJohn9/feat/publish by @RafaelJohn9 in [#139](https://github.com/Byte-Barn/gitcraft/pull/139)
+- Updated build yml to support publishing to different platforms by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README.md by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README.md by @RafaelJohn9
+- Update documentation for v0.1.11 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #135 from RafaelJohn9/develop by @RafaelJohn9 in [#135](https://github.com/Byte-Barn/gitcraft/pull/135)
+- Merge pull request #134 from RafaelJohn9/feat/saving-with-different-name by @RafaelJohn9 in [#134](https://github.com/Byte-Barn/gitcraft/pull/134)
+- Merge pull request #133 from RafaelJohn9/feat/saving-with-different-name by @RafaelJohn9 in [#133](https://github.com/Byte-Barn/gitcraft/pull/133)
+- Updated license test doc by @RafaelJohn9
+- Update documentation for v0.1.10 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #130 from RafaelJohn9/develop by @RafaelJohn9 in [#130](https://github.com/Byte-Barn/gitcraft/pull/130)
+- Merge branch 'main' into develop by @RafaelJohn9
+- Update documentation for v0.1.9 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update documentation for v0.1.8 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- LICENSE.Apache-2.0 => LICENSE by @RafaelJohn9
+- Update documentation for v0.1.7 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Apache license instead by @RafaelJohn9
+- Update documentation for v0.1.6 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #121 from RafaelJohn9/develop by @RafaelJohn9 in [#121](https://github.com/Byte-Barn/gitcraft/pull/121)
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #120 from RafaelJohn9/develop by @RafaelJohn9 in [#120](https://github.com/Byte-Barn/gitcraft/pull/120)
+- Update documentation for v0.1.2 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #119 from RafaelJohn9/develop by @RafaelJohn9 in [#119](https://github.com/Byte-Barn/gitcraft/pull/119)
+- Update documentation for v0.0.58 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #116 from RafaelJohn9/develop by @RafaelJohn9 in [#116](https://github.com/Byte-Barn/gitcraft/pull/116)
+- Update README version to v0.0.57 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #111 from RafaelJohn9/develop by @RafaelJohn9 in [#111](https://github.com/Byte-Barn/gitcraft/pull/111)
+- Update README version to v0.0.56 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #109 from RafaelJohn9/develop by @RafaelJohn9 in [#109](https://github.com/Byte-Barn/gitcraft/pull/109)
+- Update README version to v0.1.0 by @actions-user
+- Update README version to v0.0.55 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #100 from RafaelJohn9/develop by @RafaelJohn9 in [#100](https://github.com/Byte-Barn/gitcraft/pull/100)
+- Update README version to v0.0.54 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #98 from RafaelJohn9/develop by @RafaelJohn9 in [#98](https://github.com/Byte-Barn/gitcraft/pull/98)
+- Update README version to v0.0.53 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #94 from RafaelJohn9/develop by @RafaelJohn9 in [#94](https://github.com/Byte-Barn/gitcraft/pull/94)
+- Merge pull request #128 from RafaelJohn9/feat/installation-scripts by @RafaelJohn9 in [#128](https://github.com/Byte-Barn/gitcraft/pull/128)
+- Updated README with installation using installation scripts. by @RafaelJohn9
+- Merge pull request #127 from RafaelJohn9/fix/pull-request-template by @RafaelJohn9 in [#127](https://github.com/Byte-Barn/gitcraft/pull/127)
+- Replaced pull request template with the new one by @RafaelJohn9
+- Merge pull request #126 from RafaelJohn9/fix/96 by @RafaelJohn9 in [#126](https://github.com/Byte-Barn/gitcraft/pull/126)
+- Merge pull request #124 from RafaelJohn9/fix/73 by @RafaelJohn9 in [#124](https://github.com/Byte-Barn/gitcraft/pull/124)
+- Updated readme with new commands by @RafaelJohn9
+- Merge pull request #117 from RafaelJohn9/fix/102 by @RafaelJohn9 in [#117](https://github.com/Byte-Barn/gitcraft/pull/117)
+- Update dependency by @RafaelJohn9
+- Update dependency by @RafaelJohn9
+- Automatic versioning of the tool by @RafaelJohn9
+- Merge pull request #115 from RafaelJohn9/fix/42 by @RafaelJohn9 in [#115](https://github.com/Byte-Barn/gitcraft/pull/115)
+- Combined update changelog and readme version to release automation by @RafaelJohn9
+- Merge pull request #114 from RafaelJohn9/fix/79 by @RafaelJohn9 in [#114](https://github.com/Byte-Barn/gitcraft/pull/114)
+- Merge pull request #113 from RafaelJohn9/refactor/107 by @RafaelJohn9 in [#113](https://github.com/Byte-Barn/gitcraft/pull/113)
+- Download_all_templates fn to use manifest instead of Github api by @RafaelJohn9
+- Created append_file function by @RafaelJohn9
+- Refactor added reqwest as a global import  && introduced progress bar by @RafaelJohn9
+- Use manifest.yml instead of using github api by @RafaelJohn9
+- Deprecated use of api to use manifest yml files by @RafaelJohn9
+- Prettify display output dir by @RafaelJohn9
+- Merge pull request #110 from RafaelJohn9/refactor/107 by @RafaelJohn9 in [#110](https://github.com/Byte-Barn/gitcraft/pull/110)
+- Manifest yml by @RafaelJohn9
+- Updated ensure gitignore cache to support update cache parameter by @RafaelJohn9
+- Merge pull request #108 from RafaelJohn9/refactor/107 by @RafaelJohn9 in [#108](https://github.com/Byte-Barn/gitcraft/pull/108)
+- Improved licenses: used an alternative to Github API #107 by @RafaelJohn9
+- Update dependencies by @RafaelJohn9
+- Deprecated versioning in cache and increased verbosity in error handling of load_cache by @RafaelJohn9
+- License:list added --non-software by @RafaelJohn9
+- List.rs  and cache logic by @RafaelJohn9
+- License list rs by @RafaelJohn9
+- License add subcommand by @RafaelJohn9
+- Merge pull request #106 from RafaelJohn9/docs/inline-help by @RafaelJohn9 in [#106](https://github.com/Byte-Barn/gitcraft/pull/106)
+- Merge pull request #104 from RafaelJohn9/refactor/ci-dir-structure by @RafaelJohn9 in [#104](https://github.com/Byte-Barn/gitcraft/pull/104)
+- Standardized python ci template structure to be replicable with other languages and frameworks by @RafaelJohn9
+- Merge pull request #95 from RafaelJohn9/Feature-Add-more-issue-templates by @RafaelJohn9 in [#95](https://github.com/Byte-Barn/gitcraft/pull/95)
+- Merge pull request #99 from RafaelJohn9/Update/README by @RafaelJohn9 in [#99](https://github.com/Byte-Barn/gitcraft/pull/99)
+- Update README with the refactored  CLI design by @RafaelJohn9
+- Merge pull request #97 from RafaelJohn9/refactor/stable-cli-design by @RafaelJohn9 in [#97](https://github.com/Byte-Barn/gitcraft/pull/97)
+- Gitignore::list removed complexities (serialization/deserialization) by @RafaelJohn9
+- Cargo.lock by @RafaelJohn9
+- Maintainable cli design by @RafaelJohn9
+- Merge pull request #93 from RafaelJohn9/Feature-Have-compulsory-fields-to-have-an-alternate-of-_No-response_-#63 by @RafaelJohn9 in [#93](https://github.com/Byte-Barn/gitcraft/pull/93)
+- Merge pull request #92 from RafaelJohn9/Bug--Error-with-the-test-issue-template-#91 by @RafaelJohn9 in [#92](https://github.com/Byte-Barn/gitcraft/pull/92)
+- Merge pull request #90 from RafaelJohn9/Error-with-the-test-issue-template-#38 by @RafaelJohn9 in [#90](https://github.com/Byte-Barn/gitcraft/pull/90)
+- Merge pull request #88 from RafaelJohn9/fix/bug-issue-template by @RafaelJohn9 in [#88](https://github.com/Byte-Barn/gitcraft/pull/88)
+- Deprecated description field in bug issue template by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README version to v0.0.52 by @actions-user
+- Merge pull request #86 from RafaelJohn9/refactor/licenses by @RafaelJohn9 in [#86](https://github.com/Byte-Barn/gitcraft/pull/86)
+- Update README version to v0.0.51 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #83 from RafaelJohn9/develop by @RafaelJohn9 in [#83](https://github.com/Byte-Barn/gitcraft/pull/83)
+- Merge pull request #82 from RafaelJohn9/feature/pr_template by @RafaelJohn9 in [#82](https://github.com/Byte-Barn/gitcraft/pull/82)
+- Update README version to v0.0.50 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #81 from RafaelJohn9/develop by @RafaelJohn9 in [#81](https://github.com/Byte-Barn/gitcraft/pull/81)
+- Merge pull request #80 from RafaelJohn9/feature/pr-templates by @RafaelJohn9 in [#80](https://github.com/Byte-Barn/gitcraft/pull/80)
+- Merge pull request #78 from RafaelJohn9/refactor/clap-design by @RafaelJohn9 in [#78](https://github.com/Byte-Barn/gitcraft/pull/78)
+- Adopt Clap Subcommand Pattern for Clean and Extensible CLI Design by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README version to v0.0.49 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #72 from RafaelJohn9/develop by @RafaelJohn9 in [#72](https://github.com/Byte-Barn/gitcraft/pull/72)
+- Merge pull request #71 from RafaelJohn9/fix/#70/#61 by @RafaelJohn9 in [#71](https://github.com/Byte-Barn/gitcraft/pull/71)
+- Specification of dir to write output by @RafaelJohn9
+- Main functions in cmds  will be plugin managers by @RafaelJohn9
+- Update README version to v0.0.48 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #66 from RafaelJohn9/develop by @RafaelJohn9 in [#66](https://github.com/Byte-Barn/gitcraft/pull/66)
+- Merge pull request #65 from RafaelJohn9/refactor/cmds-dir-structure by @RafaelJohn9 in [#65](https://github.com/Byte-Barn/gitcraft/pull/65)
+- Rm issue.rs and license.rs by @RafaelJohn9
+- Issue.rs to a dir by @RafaelJohn9
+- Issue.rs to a dir by @RafaelJohn9
+- Merge pull request #59 from RafaelJohn9/feature/multiple-downloads by @RafaelJohn9 in [#59](https://github.com/Byte-Barn/gitcraft/pull/59)
+- #30 allow multiple downloads by @RafaelJohn9
+- Merge pull request #58 from RafaelJohn9/feature/licenses by @RafaelJohn9 in [#58](https://github.com/Byte-Barn/gitcraft/pull/58)
+- Indicatiff bump\n\nhttps://github.com/console-rs/indicatif/commit/f46ba0ac88ac0ce5f98f5b2bdef3a2a53618d257\n by @RafaelJohn9
+- Merge pull request #56 from RafaelJohn9/Deprecate-the-useinstall_issue_template.sh by @RafaelJohn9 in [#56](https://github.com/Byte-Barn/gitcraft/pull/56)
+- Merge pull request #55 from RafaelJohn9/rename-update_changelog.yml-#53 by @RafaelJohn9 in [#55](https://github.com/Byte-Barn/gitcraft/pull/55)
+- Rename update_changelog.yml to update-changelog.yml for consistency by @dcccalvin
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README version to v0.0.47 by @actions-user
+- Merge pull request #51 from RafaelJohn9/develop by @RafaelJohn9 in [#51](https://github.com/Byte-Barn/gitcraft/pull/51)
+- Merge pull request #50 from RafaelJohn9/copilot/fix-7 by @RafaelJohn9 in [#50](https://github.com/Byte-Barn/gitcraft/pull/50)
+- Initial plan by @Copilot
+- Merge pull request #49 from RafaelJohn9/update/remote-rs by @RafaelJohn9 in [#49](https://github.com/Byte-Barn/gitcraft/pull/49)
+- Merge pull request #48 from RafaelJohn9/copilot/fix-47 by @RafaelJohn9 in [#48](https://github.com/Byte-Barn/gitcraft/pull/48)
+- Fix auto-version workflow triggering issue with PAT token support by @Copilot
+- Initial plan by @Copilot
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #46 from RafaelJohn9/develop by @RafaelJohn9 in [#46](https://github.com/Byte-Barn/gitcraft/pull/46)
+- Merge pull request #43 from RafaelJohn9/Feature-Adding-more-Python-CI-templates.-#5 by @RafaelJohn9 in [#43](https://github.com/Byte-Barn/gitcraft/pull/43)
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #45 from RafaelJohn9/copilot/fix-22 by @RafaelJohn9 in [#45](https://github.com/Byte-Barn/gitcraft/pull/45)
+- Document automated versioning feature in README by @Copilot
+- Improve auto-versioning workflow with better error handling and change detection by @Copilot
+- Initial plan by @Copilot
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #37 from RafaelJohn9/Feature-Adding-more-Python-CI-templates.-#5 by @RafaelJohn9 in [#37](https://github.com/Byte-Barn/gitcraft/pull/37)
+- Organize CI templates into group-specific subfolders by @dcccalvin
+- Update README version to v0.0.44 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README version to v0.0.43 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README version to v0.0.42 by @actions-user
+- Update README version to v0.0.41 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update README version to v0.0.40 by @actions-user
+- Update README version to v0.0.39 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #41 from RafaelJohn9/fix/changelog-workflow by @RafaelJohn9 in [#41](https://github.com/Byte-Barn/gitcraft/pull/41)
+- Updated README:: piece of info to new contributors by @RafaelJohn9
+- Merge pull request #36 from RafaelJohn9/feature/enable-dynamic-readme-update by @RafaelJohn9 in [#36](https://github.com/Byte-Barn/gitcraft/pull/36)
+- Enable dynamic update of version in  README by @RafaelJohn9
+- Update README version to v0.0.38 by @actions-user
+- Update README version to v0.0.37 by @actions-user
+- Update README version to v0.0.36 by @actions-user
+- Update README.md by @RafaelJohn9
+- Update README version to v0.0.35 by @actions-user
+- Update README version to v0.0.34 by @actions-user
+- Update README version to v0.0.33 by @actions-user
+- Update README.md by @RafaelJohn9
+- Update README version to v0.0.32 by @actions-user
+- Update README version to v0.0.31 by @actions-user
+- Update README version to v0.0.28 by @actions-user
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #35 from RafaelJohn9/fix/changelog-workflow by @RafaelJohn9 in [#35](https://github.com/Byte-Barn/gitcraft/pull/35)
+- Typo in git cliff toml  and workflow by @RafaelJohn9
+- Merge pull request #33 from RafaelJohn9/update/remote-rs by @RafaelJohn9 in [#33](https://github.com/Byte-Barn/gitcraft/pull/33)
+- Update remote:list to fetch with comments by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #32 from RafaelJohn9/update/template-first-line-convention by @RafaelJohn9 in [#32](https://github.com/Byte-Barn/gitcraft/pull/32)
+- Update tests/verify_templates.rs by @RafaelJohn9
+- Updated the tests to capture all files\n\nUpdated the tests to capture all files instead of failing the first time it finds an invalid template\n by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Updated the exising issue templates by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #28 from RafaelJohn9/feature/add-tags-issue-pr-templates by @RafaelJohn9 in [#28](https://github.com/Byte-Barn/gitcraft/pull/28)
+- Enhanced template files by adding appropriate tags to them by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #23 from RafaelJohn9/update/existing-template-names by @RafaelJohn9 in [#23](https://github.com/Byte-Barn/gitcraft/pull/23)
+- Renamed pr templates by @RafaelJohn9
+- Renamed issue templates and added first line as comment by @RafaelJohn9
+- Renamed naming of licenses by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Version in README by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #15 from RafaelJohn9/feature/artifact-build-release by @RafaelJohn9 in [#15](https://github.com/Byte-Barn/gitcraft/pull/15)
+- Merge branch 'main' into feature/artifact-build-release by @RafaelJohn9
+- Typo in License by @RafaelJohn9
+- Inserted email inside Code Of Conduct by @RafaelJohn9
+- Added my email in CodeOfConduct by @RafaelJohn9
+- Added Contribution guidelines and Code of Conduct by @RafaelJohn9
+- Added License by @RafaelJohn9
+- Merge pull request #19 from RafaelJohn9/update/README by @RafaelJohn9 in [#19](https://github.com/Byte-Barn/gitcraft/pull/19)
+- README to fix typo and maintain consistency in Doc by @RafaelJohn9
+- Update README.md by @RafaelJohn9
+- README, showing distribution for git-templates bin by @RafaelJohn9
+- Introduced update change log in its own workflow with its own trigger by @RafaelJohn9
+- Build errors due to wrong ext appending (windows build) by @RafaelJohn9
+- Upload assets due to permission errors by @RafaelJohn9
+- SSL issues during build by @RafaelJohn9
+- Updated the remote functions to have better error handling when there is network error by @RafaelJohn9
+- From Github to Git templates && added default ext in  pretty print by @RafaelJohn9
+- Merge pull request #8 from RafaelJohn9/feature/issue by @RafaelJohn9 in [#8](https://github.com/Byte-Barn/gitcraft/pull/8)
+- Added Licenses by @RafaelJohn9
+- Added PR templates and CodeOfConduct template by @RafaelJohn9
+- Renamed the issue templates, Added Docs to README, Added issue template script installer by @RafaelJohn9
+- Remove typos by @RafaelJohn9
+- Moved required: true to validations by @RafaelJohn9
+- Add config yml file by @RafaelJohn9
+- Copied the Issue templates to .github by @RafaelJohn9
+- Added Issue template yml by @RafaelJohn9
+- Added README by @RafaelJohn9
+
+### Fixed
+- Updated pyproject toml for dynamic versioning by @RafaelJohn9
+- Fix (cd): uncommented cargo and pypi publish and bumped version in Cargo toml by @RafaelJohn9
+- Fix (cd): npm  workflow by @RafaelJohn9
+- Fix (cd): npm publish workflow syntax errors by @RafaelJohn9
+- Fix (cd):  fixed npm workflow. by @RafaelJohn9
+- Fix (cd): fixed npm workflow block by @RafaelJohn9
+- Fix (cd): temporarily commented out cargo and pypi publishing by @RafaelJohn9
+- Fix (ci): fix npm workflow by @RafaelJohn9
+- Fix (cd): explcit  definition of secrets needed inside the subworkflow by @RafaelJohn9
+- Fix (cd): secrets to be passed directly instead of inputs by @RafaelJohn9
+- Fix (cd): passed the secrets env var from Orchestrator to the subworkflows explicitly by @RafaelJohn9
+- Fix (cd): replaced releaste tag permissions with pypi api token inside the publish pypi workflow and added quotes around cargo regisry token env var to enable correct parsing by @RafaelJohn9
+- Fix (ci): refactored Binaries workflow yml to first build upon maturin and extract from that, for binaries that allow maturin build, created a separate step for those which can't  be build by maturin by @RafaelJohn9
+- Fix (ci): disable Build Wheel for musl builds by @RafaelJohn9
+- Fix (cd): Added Build wheel which will now support python builds && updated Relase orchestrator to now use Workflow PAT by @RafaelJohn9
+- Fix (cd): temporary removed openssl from Cargo toml due to windows build failures. by @RafaelJohn9
+- Fix (CD): updated workflows to be modular. (For now only build the artifacts) && added pyproject toml file and gitcraft/ to prepare for maturin for CD by @RafaelJohn9
+- Standardize the format template by @FaizaSuraw
+- fix(ci): ensure unique release asset names per platform in GitHub Actions by @RafaelJohn9
+- Gitignore template names with the '.gitignore' to be parsed correctly.\n\nInitially we used to allow only the template name without the the ext though some users may pass the '.gitignore' ext. It shouldn't fail but be parsed correctly\n by @RafaelJohn9
+- Problem with uploading new bin && bump version to 0.1.37 by @RafaelJohn9
+- Broken links && bump tool version in cargotoml 0.1.36 by @RafaelJohn9
+- Deploy docs (removed deprecated version) && bumped version in toml by @RafaelJohn9
+- Homebrew cloning by @RafaelJohn9
+- Pypi npm homebrew package deployment by @RafaelJohn9
+- Pypi and npm publish by @RafaelJohn9
+- Publish to have a unified namespace and fixed npm wrapper by @RafaelJohn9
+- Publish homebrew automated versioning and npm to handle global install correctly by @RafaelJohn9
+- Publish with ref to git cliff by @RafaelJohn9
+- Publish workflow by @RafaelJohn9
+- Shell errors in workflow by @RafaelJohn9
+- Centralized saved file logging inside file::save_file by @RafaelJohn9
+- Test_gitignore_add_valid_and_invalid_template by @RafaelJohn9
+- Updated default pr templates to be more generic by @RafaelJohn9
+- Pr:add:  correctly handled dir output on default template by @RafaelJohn9
+- License:mod.rs : a logical error on updating cache by @RafaelJohn9
+- Show all categories by default by @RafaelJohn9
+- Auto version workflow - to correctly take the correct tag by @RafaelJohn9
+- Fully update CHANGELOG instead of prepending by @RafaelJohn9
+- Update testing & QA template to clarify "_No Response_" option in subcategory and description fields by @dcccalvin
+- Update support template to clarify "_No Response_" option in subcategory and question fields by @dcccalvin
+- Update feature request template to clarify "_No Response_" option in subcategory and description fields by @dcccalvin
+- Update documentation issue template to clarify "_No Response_" option in descriptions by @dcccalvin
+- Update community issue template to include "_No Response_" option in descriptions by @dcccalvin
+- Enhance bug report template descriptions to include "_No Response_" option by @dcccalvin
+- Correct type for 'steps' field in testing issue template by @dcccalvin
+- Correct type for 'steps' field in testing issue template by @dcccalvin
+- PR template by @RafaelJohn9
+- Pull_request_template removed first line comment by @RafaelJohn9
+- Surpress dead code warning in remote.rs by @RafaelJohn9
+- Update  remote.rs to be standard by @RafaelJohn9
+- Update GitHub Actions workflow to build Python package using setuptools by @dcccalvin
+- Update Ruff command to explicitly check code quality by @dcccalvin
+- Update Python version matrix to allow for flexible version specification by @dcccalvin
+- Correct comment formatting in coverage.yml by @dcccalvin
+- Installation instructions: made it clearer by @RafaelJohn9
+- Syntax error in change log update workflow by @RafaelJohn9
+- Run: 16012346792 by @RafaelJohn9
+- Run: 16012293293 by @RafaelJohn9
+- Enforced semantic versioning in build yml, updated changelog yml logic by @RafaelJohn9
+- Update README to read the latest version by @RafaelJohn9
+- Updated sed command by @RafaelJohn9
+- Sed command to correctly update markdown text part by @RafaelJohn9
+- Handle the sed cmd correctly to correctly update the versions by @RafaelJohn9
+- Replace the version in both markdown and plain-text by @RafaelJohn9
+- Update sed commands by @RafaelJohn9
+- Escape the forward slashes and parentheses properly in the sed pattern by @RafaelJohn9
+- Both link part and displayed message part will be displayed by @RafaelJohn9
+- Typo in README by @RafaelJohn9
+- Trigger to happen only  on push by @RafaelJohn9
+- Git ref branch name by @RafaelJohn9
+- Renamed git-cliff to cliff storing changes to temp changelog by @RafaelJohn9
+- Git-cliff command: appended Changelog by @RafaelJohn9
+- Unexpected command in git-cliff by @RafaelJohn9
+- Changelog workflow  and updated git-cliff toml by @RafaelJohn9
+- Updated README to enable using repo labels by @RafaelJohn9
+- Updated labels to prevent only one being chosen by @RafaelJohn9
+- Space typo by @RafaelJohn9
+- Untamper with MPL 2.0  License by @RafaelJohn9
+- Refactor from git-templates to gh templates by @RafaelJohn9
+- Refactor from git templates to gh templates by @RafaelJohn9
+- Avoid pushing  on tag ref by @RafaelJohn9
+
+### Removed
+- Fix (cd): removed arm64 config to build wheels by @RafaelJohn9
+- Remove emoji from exception raised in npm by @RafaelJohn9
+- Removed toggling between light and dark theme && bump version of Cargo toml by @RafaelJohn9
+- Removed misplaced LICENSE by @RafaelJohn9
+- Removed MinGW build by @RafaelJohn9
+- Delete LICENSE.Apache-2.0 by @RafaelJohn9
+- Remove color encodings inside string to use 'colored' lib by @RafaelJohn9
+- Removed version in cache by @RafaelJohn9
+- Removed to be supported soon in utils/file.rs by @RafaelJohn9
+- Remove security issue template from issue templates by @dcccalvin
+- Removed commonAddArgs in base by @RafaelJohn9
+- Removed the  custom parser by @RafaelJohn9
+- Pull request template: removed the non performative part of the syntax by @RafaelJohn9
+- Removed emojis in PR template by @RafaelJohn9
+- Removed templates inside the repo by @RafaelJohn9
+- Remove the issue template installation script by @dcccalvin
+- Remove automated workflow documentation from README as requested by @Copilot
+- Remove documentation changes as requested - keep core workflow fix only by @Copilot
+- Remove automated versioning from README features - not a user-facing template feature by @Copilot
+- Removed redundant v while giving versions by @RafaelJohn9
+- Removed sha256 checksums from README by @RafaelJohn9
+- Removed ':' inside bug report yml\n\ntrailing ':' was found under body => dropdown => options at Other validations\n by @RafaelJohn9
+
+## New Contributors
+* @RafaelJohn9 made their first contribution
+* @github-actions[bot] made their first contribution
+* @FaizaSuraw made their first contribution
+* @actions-user made their first contribution
+* @dcccalvin made their first contribution
+* @Copilot made their first contribution
+
+<!-- generated by git-cliff -->
