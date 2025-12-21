@@ -13,6 +13,19 @@ All notable changes to this project will be documented in this file.
 
 - update documentation for v0.0.114 [skip ci] (c0a46e0)
 
+- update documentation for v0.0.015 [skip ci] (4534604)
+
+
+## [Unreleased]
+
+
+
+### Chore
+
+- update CHANGELOG [skip ci] (a91feac)
+
+- update documentation for v0.0.114 [skip ci] (c0a46e0)
+
 
 ## [v0.0.114]
 
