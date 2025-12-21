@@ -85,7 +85,7 @@ jobs:
             cat > "../npm-pkgs/$PKG_NAME/package.json" << EOF
 {
   "name": "$PKG_NAME",
-  "version": "${{ env.VERSION }}",
+  "version": "$VERSION",
   "os": ["$OS"],
   "cpu": ["$CPU"],
   "bin": {
@@ -153,7 +153,7 @@ EOF
           cat > gitcraft-unified/package.json << EOF
 {
   "name": "gitcraft",
-  "version": "${{ env.VERSION }}",
+  "version": "$VERSION",
   "description": "A CLI tool for GitHub-related utilities",
   "bin": {
     "gitcraft": "./bin/gitcraft.js"
@@ -161,11 +161,11 @@ EOF
   "files": ["bin/"],
   "license": "Apache-2.0",
   "optionalDependencies": {
-    "gitcraft-linux-x64": "${{ env.VERSION }}",
-    "gitcraft-linux-arm64": "${{ env.VERSION }}",
-    "gitcraft-darwin-x64": "${{ env.VERSION }}",
-    "gitcraft-darwin-arm64": "${{ env.VERSION }}",
-    "gitcraft-windows-x64": "${{ env.VERSION }}"
+    "gitcraft-linux-x64": "$VERSION",
+    "gitcraft-linux-arm64": "$VERSION",
+    "gitcraft-darwin-x64": "$VERSION",
+    "gitcraft-darwin-arm64": "$VERSION",
+    "gitcraft-windows-x64": "$VERSION"
   },
   "engines": {
     "node": ">=14"
