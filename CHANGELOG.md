@@ -11,6 +11,17 @@ All notable changes to this project will be documented in this file.
 
 - update CHANGELOG [skip ci] (950d431)
 
+- update documentation for v0.0.124 [skip ci] (3023eda)
+
+
+## [Unreleased]
+
+
+
+### Chore
+
+- update CHANGELOG [skip ci] (950d431)
+
 
 ## [v0.0.124]
 
