@@ -5,13 +5,16 @@ on:
     tags: ["v*.*.*"]
   workflow_dispatch:
 
+permissions:
+  id-token: write
+
 jobs:
   build:
     uses: ./.github/workflows/build-binaries.yml
 
-  publish-cargo:
-    uses: ./.github/workflows/publish-cargo.yml
-
   publish-pypi:
     uses: ./.github/workflows/publish-pypi.yml
     needs: build  # ← Can run after build, even in parallel with cargo
+
+  publish-cargo:
+    uses: ./.github/workflows/publish-cargo.yml

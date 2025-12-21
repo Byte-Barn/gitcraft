@@ -4,9 +4,6 @@ on:
   workflow_call:
   workflow_dispatch:
 
-permissions:
-  id-token: write  # for trusted publishing
-
 jobs:
   publish:
     runs-on: ubuntu-latest
