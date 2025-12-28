@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- Bumped to 0.1.3 to allow cargo publish by @RafaelJohn9
+- Update documentation for v0.1.2 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+
+## [Unreleased]
+
+### Changed
 - Update CHANGELOG [skip ci] by @github-actions[bot]
 
 ## [0.1.2] - 2025-12-28
