@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+
+## [0.1.2] - 2025-12-28
+
 ### Added
 - Add --no-color flag to disable syntax highlighting by @RafaelJohn9
 - Add retry logic with exponential backoff and update template repo URL by @RafaelJohn9
@@ -21,26 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fix (license-cache): Fixed logic used to trigger updating license caches by @RafaelJohn9
 - Fix (ci): instead of throwing error we just return the exist status code . by @RafaelJohn9
-
-## [Unreleased]
-
-### Added
-- Add --no-color flag to disable syntax highlighting by @RafaelJohn9
-- Add retry logic with exponential backoff and update template repo URL by @RafaelJohn9
-
-### Changed
-- Merge pull request #159 from Byte-Barn/feat/fetcher-retry-and-repo-update by @RafaelJohn9 in [#159](https://github.com/Byte-Barn/gitcraft/pull/159)
-- Update documentation for v0.1.1 [skip ci] by @github-actions[bot]
-- Update CHANGELOG [skip ci] by @github-actions[bot]
-
-### Fixed
-- Fix (license-cache): Fixed logic used to trigger updating license caches by @RafaelJohn9
-- Fix (ci): instead of throwing error we just return the exist status code . by @RafaelJohn9
-
-## [Unreleased]
-
-### Changed
-- Update CHANGELOG [skip ci] by @github-actions[bot]
 
 ## [0.1.1] - 2025-12-21
 
@@ -659,7 +644,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * @actions-user made their first contribution
 * @dcccalvin made their first contribution
 * @Copilot made their first contribution
-[unreleased]: https://github.com/Byte-Barn/gitcraft/compare/v0.1.1..HEAD
+[unreleased]: https://github.com/Byte-Barn/gitcraft/compare/v0.1.2..HEAD
+[0.1.2]: https://github.com/Byte-Barn/gitcraft/compare/v0.1.1..v0.1.2
 [0.1.1]: https://github.com/Byte-Barn/gitcraft/compare/v0.1.0..v0.1.1
 [0.1.0]: https://github.com/Byte-Barn/gitcraft/compare/v0.0.1..v0.1.0
 
