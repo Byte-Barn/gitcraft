@@ -7,8 +7,7 @@ pub mod list;
 pub mod preview;
 
 // Global constants - these can stay in the main module file
-const GITHUB_RAW_BASE: &str =
-    "https://raw.githubusercontent.com/rafaeljohn9/gitcraft/main/templates";
+const GITHUB_RAW_BASE: &str = "https://raw.githubusercontent.com/Byte-Barn/gitcraft/main/templates";
 
 #[derive(Subcommand)]
 pub enum Command {

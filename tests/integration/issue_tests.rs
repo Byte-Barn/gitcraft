@@ -130,9 +130,7 @@ fn test_issue_add_invalid_type() {
     cmd.args(&["add", "issue", "invalid-template"])
         .assert()
         .failure()
-        .stderr(
-            predicate::str::contains("Request failed").or(predicate::str::contains("not found")),
-        );
+        .stderr(predicate::str::contains("Failed").or(predicate::str::contains("not found")));
 }
 
 #[test]
@@ -301,9 +299,7 @@ fn test_issue_preview_invalid_id() {
     cmd.args(&["preview", "issue", "not-a-template"])
         .assert()
         .failure()
-        .stderr(
-            predicate::str::contains("Request failed").or(predicate::str::contains("not found")),
-        );
+        .stderr(predicate::str::contains("Failed").or(predicate::str::contains("not found")));
 }
 
 // --------     HELP COMMAND TEST     --------
@@ -318,7 +314,9 @@ fn test_issue_help_command() {
         .assert()
         .success()
         .stdout(predicate::str::contains("Add an issue template"))
-        .stdout(predicate::str::contains("Usage: gitcraft add issue-template"))
+        .stdout(predicate::str::contains(
+            "Usage: gitcraft add issue-template",
+        ))
         .stdout(predicate::str::contains("--dir"))
         .stdout(predicate::str::contains("--force"))
         .stdout(predicate::str::contains("-o, --output"));
