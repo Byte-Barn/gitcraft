@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- Bumping to 0.1.4 to allow Cargo publish. Seems we need to run 'Cargo run' to allow Cargo.lock to be updated. by @RafaelJohn9
+- Update documentation for v0.1.3 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+
+## [Unreleased]
+
+### Changed
 - Update CHANGELOG [skip ci] by @github-actions[bot]
 
 ## [0.1.3] - 2025-12-28
