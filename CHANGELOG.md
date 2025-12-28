@@ -12,6 +12,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add retry logic with exponential backoff and update template repo URL by @RafaelJohn9
 
 ### Changed
+- Trigger 0.1.2 release by @RafaelJohn9
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+- Merge pull request #159 from Byte-Barn/feat/fetcher-retry-and-repo-update by @RafaelJohn9 in [#159](https://github.com/Byte-Barn/gitcraft/pull/159)
+- Update documentation for v0.1.1 [skip ci] by @github-actions[bot]
+- Update CHANGELOG [skip ci] by @github-actions[bot]
+
+### Fixed
+- Fix (license-cache): Fixed logic used to trigger updating license caches by @RafaelJohn9
+- Fix (ci): instead of throwing error we just return the exist status code . by @RafaelJohn9
+
+## [Unreleased]
+
+### Added
+- Add --no-color flag to disable syntax highlighting by @RafaelJohn9
+- Add retry logic with exponential backoff and update template repo URL by @RafaelJohn9
+
+### Changed
 - Merge pull request #159 from Byte-Barn/feat/fetcher-retry-and-repo-update by @RafaelJohn9 in [#159](https://github.com/Byte-Barn/gitcraft/pull/159)
 - Update documentation for v0.1.1 [skip ci] by @github-actions[bot]
 - Update CHANGELOG [skip ci] by @github-actions[bot]
