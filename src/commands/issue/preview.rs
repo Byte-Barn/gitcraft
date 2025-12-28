@@ -8,6 +8,10 @@ use super::GITHUB_RAW_BASE;
 pub struct PreviewArgs {
     #[arg(allow_hyphen_values = true)]
     pub templates: Vec<String>,
+
+    /// Disable colored output
+    #[arg(long = "no-color")]
+    pub no_color: bool,
 }
 
 impl super::Runnable for PreviewArgs {
@@ -19,14 +23,14 @@ impl super::Runnable for PreviewArgs {
         }
 
         for template_name in &self.templates {
-            preview_single_template(template_name)?;
+            preview_single_template(template_name, self.no_color)?;
         }
 
         Ok(())
     }
 }
 
-fn preview_single_template(template: &str) -> anyhow::Result<()> {
+fn preview_single_template(template: &str, no_color: bool) -> anyhow::Result<()> {
     let fetcher = Fetcher::new();
     let url = format!("{}/issue-templates/{}.yml", GITHUB_RAW_BASE, template);
 
@@ -36,6 +40,10 @@ fn preview_single_template(template: &str) -> anyhow::Result<()> {
     pb.set_message(msg);
     pb.finish_and_clear();
 
-    pretty_print::print_highlighted("yml", &content);
+    if no_color {
+        println!("{}", content);
+    } else {
+        pretty_print::print_highlighted("yml", &content);
+    }
     Ok(())
 }

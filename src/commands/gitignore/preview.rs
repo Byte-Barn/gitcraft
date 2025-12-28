@@ -3,7 +3,7 @@ use crate::utils::pretty_print;
 use crate::utils::progress;
 use crate::utils::remote::Fetcher;
 
-use super::{GITHUB_RAW_BASE, ensure_gitignore_cache, find_template_in_cache};
+use super::{ensure_gitignore_cache, find_template_in_cache, GITHUB_RAW_BASE};
 
 #[derive(clap::Args, Debug, Clone)]
 pub struct PreviewArgs {
@@ -14,6 +14,10 @@ pub struct PreviewArgs {
     /// Update the gitignore cache
     #[arg(long = "update-cache")]
     pub update_cache: bool,
+
+    /// Disable colored output
+    #[arg(long = "no-color")]
+    pub no_color: bool,
 }
 
 impl super::Runnable for PreviewArgs {
@@ -28,17 +32,21 @@ impl super::Runnable for PreviewArgs {
         let cache = ensure_gitignore_cache(&mut cache_manager, self.update_cache)?;
 
         for template_name in &self.args {
-            preview_single_template(template_name, &cache)?;
+            preview_single_template(template_name, &cache, self.no_color)?;
         }
 
         Ok(())
     }
 }
 
-fn preview_single_template(template: &str, cache: &super::Cache<String>) -> anyhow::Result<()> {
+fn preview_single_template(
+    template: &str,
+    cache: &super::Cache<String>,
+    no_color: bool,
+) -> anyhow::Result<()> {
     // normalize template if it has the .gitignore ext
     let template = template.strip_suffix(".gitignore").unwrap_or(template);
-    
+
     // Find the template path in cache
     let template_path = find_template_in_cache(template, cache)?;
 
@@ -51,7 +59,10 @@ fn preview_single_template(template: &str, cache: &super::Cache<String>) -> anyh
     pb.set_message(msg);
     pb.finish_and_clear();
 
-    println!("\n        === Preview: {} === \n", template);
-    pretty_print::print_highlighted("gitignore", &content);
+    if no_color {
+        println!("{}", content);
+    } else {
+        pretty_print::print_highlighted("gitignore", &content);
+    }
     Ok(())
 }

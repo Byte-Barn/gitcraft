@@ -1,8 +1,8 @@
 use colored::*;
 
 use super::{
-    CHOOSEALICENSE_RAW_BASE_URL, SPDX_LICENSE_DETAILS_BASE_URL, SPDX_LICENSE_LIST_URL,
-    ensure_spdx_license_cache,
+    ensure_spdx_license_cache, CHOOSEALICENSE_RAW_BASE_URL, SPDX_LICENSE_DETAILS_BASE_URL,
+    SPDX_LICENSE_LIST_URL,
 };
 
 use crate::utils::cache::{Cache, CacheManager};

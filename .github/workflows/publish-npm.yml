@@ -128,7 +128,7 @@ jobs:
               console.error(`Run: npm install -g ${pkg}`);
               process.exit(1);
             } else {
-              throw e;
+              process.exit(e.status || 1);
             }
           }
           EOF

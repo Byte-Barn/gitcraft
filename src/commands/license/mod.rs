@@ -51,7 +51,7 @@ fn ensure_spdx_license_cache(
     let should_update = cache_manager
         .should_update_cache::<serde_json::Value>(SPDX_CACHE_NAME, CACHE_MAX_AGE_SECONDS)?;
 
-    if !should_update || !update_cache {
+    if !should_update && !update_cache {
         let cache = cache_manager.load_cache(SPDX_CACHE_NAME)?;
         // Only print if running in verbose/debug mode (not implemented here)
         // e.g., println!("Loaded license template cache ({} templates)", cache.entries.len());
@@ -94,7 +94,7 @@ fn ensure_github_api_license_cache(
         CACHE_MAX_AGE_SECONDS,
     )?;
 
-    if !should_update || update_cache {
+    if !should_update && !update_cache {
         let cache = cache_manager.load_cache(GITHUB_LICENSES_CACHE_NAME)?;
         // Only print if running in verbose/debug mode (not implemented here)
         // e.g., println!("Loaded GitHub licenses cache ({} licenses)", cache.entries.len());
